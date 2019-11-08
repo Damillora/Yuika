@@ -60,19 +60,18 @@ footer {
 }
 
 .nav {
-  @apply hidden flex flex-col w-full block mt-2;
+  @apply hidden flex flex-col w-full;
   display: none;
 }
 .nav li {
-  @apply flex flex-row h-12 items-center justify-start border-white border-t border-b my-0 py-2 text-white text-sm;
-  
+  @apply flex flex-row justify-start items-center h-12 border-white border-t border-b my-0 py-2 text-white text-sm;
 }
 @screen md {
   .nav {
-    @apply block w-auto;
+    @apply w-auto block flex-row;
   }
-  .nav-li {
-    @apply justify-center border-none my-0;
+  .nav li {
+    @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 inline-block px-4;
   }
 }
 @tailwind components;
