@@ -59,6 +59,22 @@ footer {
   @apply py-4 px-4;
 }
 
+.nav {
+  @apply hidden flex flex-col w-full block mt-2;
+  display: none;
+}
+.nav li {
+  @apply flex flex-row h-12 items-center justify-start border-white border-t border-b my-0 py-2 text-white text-sm;
+  
+}
+@screen md {
+  .nav {
+    @apply block w-auto;
+  }
+  .nav-li {
+    @apply justify-center border-none my-0;
+  }
+}
 @tailwind components;
 
 @tailwind utilities;
