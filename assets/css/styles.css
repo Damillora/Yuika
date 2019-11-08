@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300,400,500&display=swap');
+
+@tailwind base;
+html {
+  @apply font-sans;
+}
+
+header {
+  background-color: #3b90c6;
+  @apply py-4 px-4;
+}
+
+
+#post p {
+  @apply my-3;
+}
+#post h1 {
+  @apply my-4 text-4xl font-light;
+}
+#post h2 {
+  @apply my-4 text-3xl font-light;
+}
+#post h3 {
+  @apply my-4 text-2xl font-light;
+}
+#post h4 {
+  @apply my-4 text-xl font-light;
+}
+#post h5 {
+  @apply my-4 text-lg font-light;
+}
+#post h6 {
+  @apply my-4 text-base font-light;
+}
+#post a {
+  color: #3b90c6;
+  @apply underline;
+}
+#post .kg-card {
+  @apply px-4 py-4 flex flex-col items-center border-2 object-contain my-4;
+}
+#post .kg-card figcaption {
+  @apply text-sm text-gray-800 mt-2;
+}
+
+#post .kg-gallery-container {
+
+}
+#post .kg-gallery-row {
+  @apply flex flex-row;
+}
+#post .kg-gallery-image {
+  @apply mx-1;
+}
+
+
+footer {
+  background-color: #3b90c6;
+  @apply py-4 px-4;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+

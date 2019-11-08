@@ -1,0 +1,17 @@
+{{!< default}}
+<div class="h-20 md:h-64 relative">
+  {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="h-full opacity-50 bg-black">
+    </div>
+  </div>
+  <div class="h-full flex flex-row justify-begin items-center absolute bottom-0">
+    <h1 class="text-white text-2xl font-light md:text-6xl pl-12">Blog</h1>
+  </div>
+</div>
+
+<div class="container px-6 my-6 flex flex-wrap justify-between mx-auto">
+{{#foreach posts}}
+  {{> "post-card"}}
+{{/foreach}}
+</div>
+

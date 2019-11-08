@@ -1,0 +1,45 @@
+<div class="w-full md:w-1/2 px-3 py-6">
+<article class="relative group w-full">
+  {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="h-full md:bg-black md:opacity-50 md:group-hover:opacity-75 transition-opacity">
+      <a class="block md:hidden h-full" href="{{url}}">
+        <div class="h-full"></div>
+      </a>
+    </div>
+  </div>
+  <div class="md:absolute md:bottom-0 md:px-6 md:py-2 mt-4 md:mt-0 w-full">
+    {{#if primary_tag}}
+    {{#primary_tag}}
+    <div class="py-1">
+      <a href="{{url}}"><p class="bg-green-500 w-auto inline-block px-2 py-1 text-white text-xs">{{name}}</p></a>
+    </div>
+    {{/primary_tag}}
+    {{/if}}
+    <div class="text-black mt-0 text-xl md:text-white md:group-hover:text-gray-300">
+      <a href="{{url}}"><h1 class="font-light">{{title}}</h1></a>
+    </div>
+    <div class="flex flex-row items-center mt-2 mb-4">
+      <div class="flex flex-row">
+        {{#foreach authors}}
+          {{#if profile_image}}
+            <div class="h-8 ml-1 mr-3">
+              <a href="{{url}}">
+                <img class="h-full rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
+              </a>
+            </div>
+          {{/if}}
+        {{/foreach}}
+      </div>
+      <div class="flex-grow flex flex-coltext-black text-xs md:text-white">
+        <div>
+          <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
+          <p><span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
+        </div>
+      </div> 
+    </div>
+    <div class="block text-black mb-4 text-sm md:text-white">
+       <p>{{excerpt words="30"}}</p>
+    </div>
+  </div>
+</article>
+</div>

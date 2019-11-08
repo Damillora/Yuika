@@ -1,0 +1,30 @@
+{{!< default}}
+{{#tag}}
+<div class="h-64 relative">
+  {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="h-full opacity-50 bg-black">
+    </div>
+  </div>
+  <div class="h-full flex flex-col justify-end items-begin absolute bottom-0 py-6 px-6">
+    <div>
+      <p class="bg-blue-500 w-auto inline-block px-2 py-1 text-white text-sm">Tag</p>
+    </div>
+    <div>
+      <h1 class="text-white text-2xl md:text-4xl">{{name}}</h1>
+    </div>
+    <div class="text-white">
+      {{#if description}}
+      <p>{{description}}</p>
+      {{else}}
+      <p>A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+{{/tag}}
+
+<div class="container px-6 my-6 flex flex-wrap justify-between mx-auto">
+{{#foreach posts}}
+  {{> "post-card"}}
+{{/foreach}}
+</div>

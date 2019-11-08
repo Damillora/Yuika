@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{meta_title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{asset "built/styles.css"}}" />
+
+    {{ghost_head}}    
+  </head>
+  <body class="{{body_class}}">
+    <header class="flex flex-row py-2 flex-wrap">
+      {{#if @site.logo}}
+      <div class="flex flex-col h-12">
+        <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" class="w-full h-full object-contain">
+      </div>
+      {{/if}}
+      <div class="flex flex-col flex-grow ml-4">
+        <div class="">
+         <a href="{{@site.url}}">
+          <h1 class="text-lg text-white">{{@site.title}}</h1>
+         </a>
+        </div>
+        <div class="">
+          <p class="text-sm text-white">{{@site.description}}</p>
+        </div>
+      </div>
+      <div id="menushow" class="block md:hidden flex flex-column items-center px-2 py-2 cursor-pointer">
+        <img src="{{asset "images/menu.svg"}}" class="h-8 text-white" style="filter: invert(1);" />
+      </div>
+      <div id="menu" class="hidden md:block flex flex-col w-full md:w-auto" style="">
+        <div class="flex flex-row h-full items-center justify-begin md:justify-center border-white border-t border-b md:border-none my-2 py-2 md:my-0">
+          <div>
+            <a href="/" class="">
+              <p class="text-white text-lg md:text-base">Home</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {{{body}}}
+    <footer class="md:h-16">
+      <div class="flex flex-col md:flex-row justify-end md:items-center h-full mb-4 md:mb-0">
+        <div class="text-white md:flex-grow text-sm mx">
+          <p><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</p>
+        </div>
+        <div class="flex flex-col md:flex-row text-white text-sm items-end text-right">
+          <div class="px-2">
+            <a href="{{@site.url}}">Latest Posts</a>
+          </div>
+          <div class="px-2">
+            {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
+          </div>
+          <div class="px-2">
+            {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+          </div>
+          <div class="px-2">
+            Powered by <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+          </div>
+          <div class="px-2">
+            Yuika Theme by <a href="https://nanao.moe" target="_blank" rel="noopener">Damillora</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="{{asset "built/yuika.js"}}"></script>
+    <script>
+      $("#menushow").click(function() {
+        var menu = $("#menu");
+        var menubtn = $("#menushow");
+        if(menu.is(":hidden")) {
+          menu.slideDown(250);
+        } else {
+          menu.slideUp(250);
+        }
+      });
+    </script>
+    {{{block "scripts"}}}
+
+    {{ghost_foot}}
+  </body>
+</html>

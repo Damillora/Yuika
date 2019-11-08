@@ -1,0 +1,53 @@
+{{!< default}}
+{{#author}}
+<div class="h-64 relative">
+  {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="h-full opacity-50 bg-black">
+    </div>
+  </div>
+  <div class="h-full flex flex-col justify-end items-begin absolute bottom-0 py-6 px-6">
+    <div class="my-2">
+      <p class="bg-red-500 w-auto inline-block px-2 py-1 text-white text-sm">Author</p>
+    </div>
+    <div class="flex flex-row">
+      <div class="flex flex-col items-begin mr-2">
+        {{#if profile_image}}
+        <div class="my-2">
+          <img class="rounded-full h-16" src="{{profile_image}}" alt="{{name}}" />
+        </div>
+        {{/if}}
+      </div>
+      <div class="flex flex-col items-begin my-2">
+        <div>
+          <h1 class="text-white text-2xl md:text-4xl">{{name}}</h1>
+        </div>
+        <div class="text-white">
+          {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+        </div>
+        <div class="text-white">
+          {{#if website}}
+          <span class=""><a href="{{website}}" target="_blank" rel="noopener">Website</a></span>
+          {{/if}}
+          {{#if twitter}}
+          <span class=""><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
+          {{/if}}
+          {{#if facebook}}
+          <span class=""><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
+          {{/if}}
+         </div>
+       </div>
+    </div>
+    <div class="text-white">
+      {{#if bio}}
+      <p>{{bio}}</p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+{{/author}}
+
+<div class="container px-6 my-6 flex flex-wrap justify-between mx-auto">
+{{#foreach posts}}
+  {{> "post-card"}}
+{{/foreach}}
+</div>
