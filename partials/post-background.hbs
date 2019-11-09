@@ -21,10 +21,6 @@ with a `no-image` class so we can style it accordingly.
     @media(max-width: 767px) {
         .responsive-{{slug}}-img {
             background-image: url({{img_url feature_image size='m'}});
-            background-image: -webkit-image-set(url({{img_url feature_image size='m'}}) 1x,
-                url({{img_url feature_image size='l'}}) 2x);
-            background-image: image-set(url({{img_url feature_image size='m'}}) 1x,
-                url({{img_url feature_image size='l'}}) 2x);
         }
     }
 </style>
