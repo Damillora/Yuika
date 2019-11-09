@@ -5,6 +5,7 @@ const livereload = require('gulp-livereload');
 const zip = require('gulp-zip');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const cleancss = require('gulp-clean-css');
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
 
@@ -41,6 +42,7 @@ function css () {
       // ...
     ]))
     // ...
+    .pipe(cleancss({compatibility: 'ie8'}))
     .pipe(dest('assets/built/'))
     .pipe(livereload())
 }
