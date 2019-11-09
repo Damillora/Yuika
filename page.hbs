@@ -1,12 +1,8 @@
 {{!< default}}
-<div>
-{{> "site-header"}}
-</div>
 
 {{#post}}
 <article>
-
-<div class="h-64 relative group">
+<div class="relative group index-header">
   {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
     <div class="h-full opacity-50 bg-black group-hover:opacity-75 transition-opacity">
     </div>
@@ -15,20 +11,20 @@
     {{#if primary_tag}}
     {{#primary_tag}}
     <div>
-      <a href="{{url}}"><p class="bg-green-500 w-auto inline-block px-2 py-1 text-white text-sm">{{name}}</p></a>
+      <a href="{{url}}"><p class="bg-green-700 w-auto inline-block px-2 py-1 text-white text-sm">{{name}}</p></a>
     </div>
     {{/primary_tag}}
     {{/if}}
-    <div>
+    <div class="mb-4">
       <h1 class="text-white font-light text-3xl md:text-4xl">{{title}}</h1>
     </div>
-    <div class="mb-4">
-      <p><span class="text-white text-sm"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
-    </div>
+  </div>
+  <div class="w-full flex flex-row justify-begin items-center absolute top-0 index-navbar">
+  {{> "site-header"}}
   </div>
 </div>
 
-<main class="container px-6 my-6 content" id="post">
+<main class="container px-2 md:px-24 lg:px-64 xl:px-64 my-6 mx-auto content" id="post">
     <div>
       {{content}}
     </div>
@@ -38,10 +34,11 @@
 
 {{#contentFor "scripts"}}
 <script>
-    $(function() {
+$(document).ready(function () {
+        // FitVids - start
         var $postContent = $("#post");
         $postContent.fitVids();
-    });
+        // FitVids - end
+});
 </script>
 {{/contentFor}}
-

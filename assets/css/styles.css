@@ -44,6 +44,31 @@ header {
 #post .kg-card {
   @apply px-4 py-4 flex flex-col items-center object-contain my-4;
 }
+#post .kg-card .kg-image {
+  @apply w-full;
+}
+#post .kg-width-wide .kg-image {
+  min-width: 100vw;
+}
+@screen md {
+  #post .kg-width-wide .kg-image {
+    min-width: 125%;
+  }
+}
+@screen lg {
+  #post .kg-width-wide .kg-image {
+    min-width: 175%;
+  }
+}
+@screen xl {
+  #post .kg-width-wide .kg-image {
+    min-width: 140%;
+  }
+}
+
+#post .kg-width-full .kg-image {
+  min-width: 100vw;
+}
 #post .kg-card figcaption {
   @apply text-sm text-gray-800 mt-2;
 }
