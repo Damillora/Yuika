@@ -43,12 +43,13 @@
   </div>
 </div>
 
-<main class="container px-2 md:px-24 lg:px-64 xl:px-64 my-6 mx-auto content" id="post">
-    <div>
+<div class="px-4">
+<main class="container mx-auto content" id="post">
+    <div class="px-2 sm:px-8 md:px-16 lg:px-32 xl:px-64">
       {{content}}
     </div>
 </main>
-<div class="container px-24 my-6">
+<div class="container mx-auto">
     <div class="my-4" id="comments">
     </div>
     <div class="my-4 flex flex-row justify-between">
@@ -73,6 +74,7 @@
       </div>
       {{/next_post}}
     </div>
+</div>
 </div>
 {{/post}}
 </article>
