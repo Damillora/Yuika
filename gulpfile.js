@@ -13,9 +13,9 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
     './**/*.hbs',
     './assets/**/*.js',
+    './assets/css/styles.css', // This file defines required styles for the Ghost editor
     // etc.
   ],
-  whitelist: ['li'],
 
   // Include any special characters you're using in this regular expression
   defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
