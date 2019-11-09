@@ -39,10 +39,10 @@ header {
 }
 #post a {
   color: #085d93;
-  @apply underline;
 }
+
 #post .kg-card {
-  @apply px-4 py-4 flex flex-col items-center border-2 object-contain my-4;
+  @apply px-4 py-4 flex flex-col items-center object-contain my-4;
 }
 #post .kg-card figcaption {
   @apply text-sm text-gray-800 mt-2;
@@ -58,6 +58,39 @@ header {
   @apply mx-1;
 }
 
+#post .kg-bookmark-card {
+  @apply text-black;
+}
+#post .kg-bookmark-container {
+  @apply flex flex-row justify-between text-black border border-gray-500;
+}
+#post .kg-bookmark-content {
+  @apply w-2/3 py-4 px-4;
+}
+#post .kg-bookmark-thumbnail {
+  @apply w-1/3 h-full;
+}
+#post .kg-bookmark-thumbnail img {
+  @apply w-full h-full object-cover;
+}
+#post .kg-bookmark-title {
+  @apply font-medium text-xl no-underline mb-1;
+}
+#post .kg-bookmark-description {
+  @apply font-light text-sm my-2;
+}
+#post .kg-bookmark-metadata {
+  @apply flex flex-row items-start justify-end h-6 my-4;
+}
+#post .kg-bookmark-icon {
+  @apply h-full mx-2;
+}
+#post .kg-bookmark-author {
+  @apply text-sm text-blue-700 truncate;
+}
+#post .kg-bookmark-publisher {
+  @apply text-sm text-blue-700 truncate;
+}
 footer {
   background-color: #085d93;
   @apply py-4 px-4;
