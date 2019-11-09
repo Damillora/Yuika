@@ -58,18 +58,17 @@ header {
   @apply mx-1;
 }
 
-
 footer {
   background-color: #085d93;
   @apply py-4 px-4;
 }
 
 .nav {
-  @apply hidden flex flex-col w-full;
+  @apply hidden flex flex-col w-full pl-0 my-0 h-12;
   display: none;
 }
 .nav li {
-  @apply flex flex-row justify-start items-center h-12 my-0 py-2 text-white text-sm px-2;
+  @apply flex flex-row justify-start items-center h-full my-0 py-2 text-white text-sm px-2;
 }
 @screen md {
   .nav {
