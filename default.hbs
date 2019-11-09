@@ -45,29 +45,6 @@
         crossorigin="anonymous">
     </script>
     <script src="{{asset "built/yuika.js"}}"></script>
-    <script>
-function sliderheight(a){
-        divHeight = $('.navbar').height();
-        if(a) {
-           $('.nav').css({'background-color' : '#3b90c6'} );
-        } else {
-           $('.nav').css({'background-color' : ''} );
-        }
-}
-
-      $("#menushow").click(function() {
-        var menu = $(".nav");
-        var menubtn = $("#menushow");
-        if(menu.is(":hidden")) {
-          $('.nav').css({'display': 'block', 'visibility':'hidden'});
-          sliderheight(true);
-          $('.nav').css({'display': 'none','visibility':'visible'});
-          menu.slideDown(250);
-        } else {
-          menu.slideUp(250, () => sliderheight(false));
-        }
-      });
-    </script>
     {{{block "scripts"}}}
 
     {{ghost_foot}}

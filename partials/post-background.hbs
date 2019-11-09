@@ -15,20 +15,10 @@ with a `no-image` class so we can style it accordingly.
 
 <style type="text/css">
     .responsive-{{slug}}-img {
-        background-image: url({{img_url feature_image size='xl'}});
+        background-image: url({{img_url feature_image size='m'}});
     }
 
-    @media(max-width: 1000px) {
-        .responsive-{{slug}}-img {
-            background-image: url({{img_url feature_image size='l'}});
-            background-image: -webkit-image-set(url({{img_url feature_image size='l'}}) 1x,
-                url({{img_url feature_image size='xl'}}) 2x);
-            background-image: image-set(url({{img_url feature_image size='l'}}) 1x,
-                url({{img_url feature_image size='xl'}}) 2x);
-        }
-    }
-
-    @media(max-width: 600px) {
+    @media(max-width: 767px) {
         .responsive-{{slug}}-img {
             background-image: url({{img_url feature_image size='m'}});
             background-image: -webkit-image-set(url({{img_url feature_image size='m'}}) 1x,

@@ -6,6 +6,20 @@ const zip = require('gulp-zip');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 
+const purgecss = require('@fullhuman/postcss-purgecss')({
+
+  // Specify the paths to all of the template files in your project 
+  content: [
+    './**/*.hbs',
+    './assets/**/*.js',
+    // etc.
+  ],
+  whitelist: ['li'],
+
+  // Include any special characters you're using in this regular expression
+  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+})
+
 function serve(done) {
     livereload.listen();
     done();
@@ -23,6 +37,7 @@ function css () {
       // ...
       require('tailwindcss'),
       require('autoprefixer'),
+      ...process.env.NODE_ENV === 'production' ? [purgecss] : []
       // ...
     ]))
     // ...
@@ -63,6 +78,7 @@ function zipper(done) {
         .pipe(dest(targetDir));
 }
 
+exports.build = build;
 exports.zip = series(build, zipper);
 exports.dev = dev;
 exports.default = build;
