@@ -13,27 +13,6 @@
     {{ghost_head}}    
   </head>
   <body class="{{body_class}}">
-    <header class="flex flex-row py-2 flex-wrap">
-      {{#if @site.logo}}
-      <div class="flex flex-col h-12">
-        <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" class="w-full h-full object-contain">
-      </div>
-      {{/if}}
-      <div class="flex flex-col ml-4 flex-grow">
-        <div class="">
-         <a href="{{@site.url}}">
-          <h1 class="text-lg text-white">{{@site.title}}</h1>
-         </a>
-        </div>
-        <div class="">
-          <p class="text-sm text-white">{{@site.description}}</p>
-        </div>
-      </div>
-      <div id="menushow" class="block md:hidden flex flex-column items-center px-2 py-2 cursor-pointer">
-        <img src="{{asset "images/menu.svg"}}" class="h-8 text-white" style="filter: invert(1);" />
-      </div>
-      {{navigation}}
-    </header>
 
     {{{body}}}
     <footer class="md:h-16">
@@ -67,13 +46,25 @@
     </script>
     <script src="{{asset "built/yuika.js"}}"></script>
     <script>
+function sliderheight(a){
+        divHeight = $('.navbar').height();
+        if(a) {
+           $('.nav').css({'background-color' : '#3b90c6'} );
+        } else {
+           $('.nav').css({'background-color' : ''} );
+        }
+}
+
       $("#menushow").click(function() {
         var menu = $(".nav");
         var menubtn = $("#menushow");
         if(menu.is(":hidden")) {
+          $('.nav').css({'display': 'block', 'visibility':'hidden'});
+          sliderheight(true);
+          $('.nav').css({'display': 'none','visibility':'visible'});
           menu.slideDown(250);
         } else {
-          menu.slideUp(250);
+          menu.slideUp(250, () => sliderheight(false));
         }
       });
     </script>

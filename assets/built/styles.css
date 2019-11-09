@@ -617,6 +617,15 @@ header {
   padding-right: 1rem;
 }
 
+.index-navbar header {
+  background-color: transparent;
+}
+
+.index-header {
+  min-height: 300px;
+  height: 50vh;
+}
+
 #post p {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -740,15 +749,14 @@ footer {
   -webkit-box-align: center;
           align-items: center;
   height: 3rem;
-  border-color: #fff;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   color: #fff;
   font-size: 0.875rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -775,6 +783,11 @@ footer {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+.nav-fixed {
+  background-color: #3b90c6;
+  z-index: 10;
 }
 
 .container{

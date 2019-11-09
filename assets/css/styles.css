@@ -4,12 +4,17 @@
 html {
   @apply font-sans;
 }
-
 header {
   background-color: #3b90c6;
   @apply py-4 px-4;
 }
-
+.index-navbar header {
+  background-color: transparent;
+}
+.index-header {
+  min-height: 300px;
+  height: 50vh;
+}
 
 #post p {
   @apply my-3;
@@ -64,7 +69,7 @@ footer {
   display: none;
 }
 .nav li {
-  @apply flex flex-row justify-start items-center h-12 border-white border-t border-b my-0 py-2 text-white text-sm;
+  @apply flex flex-row justify-start items-center h-12 my-0 py-2 text-white text-sm px-2;
 }
 @screen md {
   .nav {
@@ -73,6 +78,11 @@ footer {
   .nav li {
     @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 inline-block px-4;
   }
+}
+
+.nav-fixed {
+  background-color: #3b90c6;
+  z-index: 10;
 }
 @tailwind components;
 
