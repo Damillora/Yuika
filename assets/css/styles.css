@@ -87,7 +87,10 @@ header {
   @apply text-black;
 }
 #post .kg-bookmark-container {
-  @apply flex flex-row justify-between text-black border border-gray-500;
+  @apply flex flex-row justify-between text-black border border-gray-500 bg-white transition-bg;
+}
+#post .kg-bookmark-container:hover {
+  @apply bg-gray-400 transition-bg;
 }
 #post .kg-bookmark-content {
   @apply w-2/3 py-4 px-4;
@@ -121,19 +124,34 @@ footer {
   @apply py-4 px-4;
 }
 
+
 .nav {
-  @apply hidden flex flex-col w-full pl-0 my-0 h-12;
-  display: none;
+  @apply hidden flex-col w-full pl-0 my-0 absolute;
+  background-color: #085d93;
 }
 .nav li {
-  @apply flex flex-row justify-start items-center h-full my-0 py-2 text-white text-sm px-2;
+  @apply flex flex-row justify-start items-center my-0 py-2 text-white text-sm px-2 h-12 px-4;
 }
+.nav li a {
+  @apply align-middle w-full table-cell;
+  line-height: 3rem;
+}
+#menushow:hover .nav {
+  @apply block w-screen;
+  right: -1rem;
+}
+
 @screen md {
   .nav {
-    @apply w-auto block flex-row;
+    @apply block static w-auto flex-row h-12 bg-transparent;
   }
   .nav li {
-    @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 inline-block px-4;
+    @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 inline-block h-full;
+  }
+  #menushow:hover .nav {
+    @apply pt-0;
+    right: 0;
+    width: initial;
   }
 }
 

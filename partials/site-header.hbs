@@ -14,8 +14,8 @@
           <p class="text-sm text-white">{{@site.description}}</p>
         </div>
       </div>
-      <div id="menushow" class="block md:hidden flex flex-column items-center px-2 py-2 cursor-pointer">
-        <img src="{{asset "images/menu.svg"}}" class="h-8 text-white" style="filter: invert(1);" alt="menu"/>
+      <div id="menushow" class="cursor-pointer relative">
+        <img src="{{asset "images/menu.svg"}}" class="h-12 px-3 py-3 text-white md:hidden" style="filter: invert(1);" alt="menu"/>
+        {{navigation}}
       </div>
-      {{navigation}}
     </header>

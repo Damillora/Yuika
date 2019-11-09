@@ -1,7 +1,7 @@
     $(document).ready(function () {
         
         var nav = document.querySelector('.index-navbar');
-        var feed = document.querySelector('#post');
+        var feed = document.querySelector('.content');
 
         var lastScrollY = window.scrollY;
         var lastWindowHeight = window.innerHeight;
