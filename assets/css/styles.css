@@ -5,7 +5,7 @@ html {
   @apply font-sans;
 }
 header {
-  background-color: #3b90c6;
+  background-color: #085d93;
   @apply py-4 px-4;
 }
 .index-navbar header {
@@ -38,7 +38,7 @@ header {
   @apply my-4 text-base font-light;
 }
 #post a {
-  color: #3b90c6;
+  color: #085d93;
   @apply underline;
 }
 #post .kg-card {
@@ -60,7 +60,7 @@ header {
 
 
 footer {
-  background-color: #3b90c6;
+  background-color: #085d93;
   @apply py-4 px-4;
 }
 
@@ -81,7 +81,7 @@ footer {
 }
 
 .nav-fixed {
-  background-color: #3b90c6;
+  background-color: #085d93;
   z-index: 10;
 }
 @tailwind components;
