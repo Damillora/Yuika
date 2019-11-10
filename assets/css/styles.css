@@ -43,7 +43,7 @@ header {
 }
 
 #post .kg-card {
-  @apply px-4 py-4 flex flex-col items-center object-contain my-4;
+  @apply py-4 flex flex-col items-center object-contain my-4 mx-0;
 }
 #post .kg-card .kg-image {
   @apply w-full;
