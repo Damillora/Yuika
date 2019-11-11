@@ -7,7 +7,8 @@
     <div class="h-full opacity-50 bg-black group-hover:opacity-75 transition-opacity">
     </div>
   </div>
-  <div class="absolute bottom-0 py-6 px-6">
+  <div class="absolute bottom-0 py-6 left-0 right-0">
+   <div class="container mx-auto px-2 sm:px-8 md:px-16 lg:px-32 xl:px-64">
     {{#if primary_tag}}
     {{#primary_tag}}
     <div>
@@ -18,6 +19,7 @@
     <div>
       <h1 class="text-white font-light text-3xl md:text-4xl">{{title}}</h1>
     </div>
+   </div>
   </div>
   <div class="w-full flex flex-row justify-begin items-center absolute top-0 index-navbar">
   {{> "site-header"}}
