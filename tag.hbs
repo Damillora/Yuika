@@ -1,16 +1,13 @@
 {{!< default}}
-<div>
-{{> "site-header"}}
-</div>
 
 {{#tag}}
-<div class="h-64 relative">
+<div class="relative group index-header">
   {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
     <div class="h-full opacity-50 bg-black">
     </div>
   </div>
-  <div class="absolute bottom-0 py-6">
-   <div class="container mx-auto px-2 sm:px-8 md:px-16 lg:px-32 xl:px-64">
+  <div class="absolute bottom-0 py-6 h-full left-0 right-0">
+   <div class="container mx-auto px-2 sm:px-8 md:px-16 lg:px-32 xl:px-64 h-full flex flex-col justify-end items-begin">
     <div>
       <p class="bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm">Tag</p>
     </div>
@@ -25,6 +22,9 @@
       {{/if}}
     </div>
    </div>
+  </div>
+  <div class="w-full flex flex-row justify-begin items-center absolute top-0 index-navbar">
+  {{> "site-header"}}
   </div>
 </div>
 {{/tag}}
