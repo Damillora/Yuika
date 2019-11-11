@@ -6,9 +6,15 @@ This theme is under heavy development as tweaks are made.
 
 ## Screenshots
 
-![index](https://i.imgur.com/OlZwKPd.png)
-![post-1](https://i.imgur.com/NuCzHux.png)
-![post-2](https://i.imgur.com/wpJVzh5.png)
+![index](https://i.imgur.com/VX5GDDL.png)
+
+![post-1](https://i.imgur.com/ewJ3d8q.png)
+
+![post-2](https://i.imgur.com/5qYy5Zb.png)
+
+![tag](https://i.imgur.com/r5mlo9U.png)
+
+![author](https://i.imgur.com/SuTXYYZ.png)
 
 ## Credits
 
