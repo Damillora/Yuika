@@ -11,6 +11,19 @@ module.exports = {
       'transform': 'transform',
     },
     extend: {
+      colors: {
+        'yuika-blue': {
+          '100': '#C6E7F8',
+          '200': '#9FD3F0',
+          '300': '#7BBEE5',
+          '400': '#5AA7D7',
+          '500': '#3B90C6',
+          '600': '#2E72AA',
+          '700': '#22558C',
+          '800': '#173B6C',
+          '900': '#0E254C',
+        }
+      }
     },
     fontFamily: {
       'sans': ['"Exo 2"',' -apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
