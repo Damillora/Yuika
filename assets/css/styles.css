@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2:300,400,500&display=swap');
 
 @tailwind base;
+
+/* 1. Base Styling */
 html {
   @apply font-sans;
 }
+
+/* 2. Site Header */
 header {
-  background-color: #085d93;
-  @apply py-4 px-4;
+  @apply py-4 px-4 bg-yuika-blue-700;
 }
 .index-navbar header {
   background-color: transparent;
@@ -17,6 +20,8 @@ header {
   height: 50vh;
 }
 
+
+/* 3. Content Styling */
 #post p {
   @apply my-3;
 }
@@ -39,7 +44,7 @@ header {
   @apply my-4 text-base font-light;
 }
 #post a {
-  color: #085d93;
+  @apply text-yuika-blue-700;
 }
 
 #post .kg-card {
@@ -121,14 +126,14 @@ header {
   @apply text-sm text-blue-700 truncate;
 }
 footer {
-  background-color: #085d93;
-  @apply py-4 px-4;
+  @apply py-4 px-4 bg-yuika-blue-700;
 }
 
 
+/* 4. Navbar */
+
 .nav {
-  @apply hidden flex-col w-full pl-0 my-0 absolute;
-  background-color: #085d93;
+  @apply hidden flex-col w-full pl-0 my-0 absolute bg-yuika-blue-700;
 }
 .nav li {
   @apply flex flex-row justify-start items-center my-0 py-2 text-white text-sm px-2 h-12 px-4;
@@ -150,20 +155,47 @@ footer {
     @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 inline-block h-full;
   }
   #menushow:hover .nav {
-    @apply pt-0;
-    right: 0;
+    @apply pt-0 right-0;
     width: initial;
   }
 }
 
 .nav-fixed {
-  background-color: #085d93;
   z-index: 10;
+  @apply bg-yuika-blue-700;
+}
+
+.post-article {
+  @apply pb-32 pt-8;
 }
 
 .content {
-  @apply pb-32;
+  @apply mx-auto;
 }
+.content-full {
+  @apply px-2;
+}
+@screen sm {
+  .content-full {
+    @apply px-8;
+  }
+}
+@screen md {
+  .content-full {
+    @apply px-16;
+  }
+}
+@screen lg {
+  .content-full {
+    @apply px-32;
+  }
+}
+@screen xl {
+  .content-full {
+    @apply px-64;
+  }
+}
+
 @tailwind components;
 
 @tailwind utilities;

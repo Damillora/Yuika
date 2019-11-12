@@ -1,14 +1,13 @@
 {{!< default}}
 
 {{#post}}
-<article>
 <div class="relative group index-header">
   {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
     <div class="h-full opacity-50 bg-black group-hover:opacity-75 transition-opacity">
     </div>
   </div>
   <div class="absolute bottom-0 py-6 left-0 right-0">
-   <div class="container mx-auto px-2 sm:px-8 md:px-16 lg:px-32 xl:px-64">
+   <div class="container mx-auto content-full">
     {{#if primary_tag}}
     {{#primary_tag}}
     <div>
@@ -40,20 +39,21 @@
       </div>
    </div>
   </div>
-  <div class="w-full flex flex-row justify-begin items-center absolute top-0 index-navbar">
   {{> "site-header"}}
-  </div>
 </div>
 
-<div class="px-4">
-<main class="container mx-auto content" id="post">
-  <div class="px-2 sm:px-8 md:px-16 lg:px-32 xl:px-64">
+<article class="post-article">
+<main class="content container" id="post">
+  <div class="content-full">
     {{content}}
   </div>
-  <div class="px-2 sm:px-8 md:px-16 lg:px-32 xl:px-64">
+  <div class="content-full">
     <div class="my-4" id="comments">
     </div>
-    <div class="my-4 flex flex-row justify-between">
+  </div>
+</main>
+<div class="my-4 w-full content-full">
+    <div class="flex flex-row justify-between">
       {{#prev_post}}
       <div class="w-1/3">
         <a href="{{url}}">
@@ -64,6 +64,7 @@
         </a>
       </div>
       {{/prev_post}}
+      <div class="flex flex-grow"></div>
       {{#next_post}}
       <div class="w-1/3">
         <a href="{{url}}">
@@ -75,8 +76,25 @@
       </div>
       {{/next_post}}
     </div>
-  </div>
-</main>
+</div>
+<div class="mx-4 my-4 w-full">
+            {{#if primary_tag}}
+              {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+                {{#if related_posts}}
+                  {{#../primary_tag}}
+                    <div class="px-3 w-full">
+                      <p class="text-2xl">More in <a href="{{url}}" class="bg-green-700 w-auto inline px-2 py-1 text-white text-2xl">{{name}}</a> </p>
+                    </div>
+                  {{/../primary_tag}}
+                  <div class="flex flex-wrap justify-start w-full">
+                  {{#foreach related_posts}}
+                    {{> post-card}}
+                  {{/foreach}}
+                  </div>
+                {{/if}}
+              {{/get}}
+            {{/if}}
+</div>
 {{/post}}
 </article>
 

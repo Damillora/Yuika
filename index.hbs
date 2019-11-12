@@ -1,12 +1,10 @@
 {{!< default}}
-<div class="h-64 relative index-header">
+<div class="h-64 relative group index-header">
   {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-    <div class="h-full opacity-50 bg-black">
+    <div class="w-full h-full opacity-50 bg-black group-hover:opacity-75 transition-opacity">
     </div>
   </div>
-  <div class="w-full flex flex-row justify-begin items-center absolute top-0 index-navbar">
-    {{> "site-header"}}
-  </div>
+  {{> "site-header"}}
 </div>
 <div class="flex flex-wrap justify-start post-feed content w-full px-4">
   {{#foreach posts}}
