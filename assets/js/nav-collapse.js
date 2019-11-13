@@ -31,14 +31,10 @@
             var progressMax = lastDocumentHeight - lastWindowHeight;
 
             // show/hide nav
-            if (lastScrollY >= trigger - 20) {
-                nav.classList.add('fixed');
+            if (lastScrollY >= nav.getBoundingClientRect().bottom) {
                 nav.classList.add('nav-fixed');
-                nav.classList.remove('absolute');
             } else {
-                nav.classList.remove('fixed');
                 nav.classList.remove('nav-fixed');
-                nav.classList.add('absolute');
             }
 
             ticking = false;

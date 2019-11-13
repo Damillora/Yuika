@@ -7,10 +7,13 @@
 html {
   @apply font-sans;
 }
-
-/* 2. Site Header */
 header {
-  @apply py-4 px-4 bg-yuika-blue-700;
+  @apply py-4 px-4;
+}
+/* 2. Site Header */
+.index-navbar {
+  z-index: 10;
+  @apply transition-bg;
 }
 .index-navbar header {
   background-color: transparent;
@@ -161,7 +164,6 @@ footer {
 }
 
 .nav-fixed {
-  z-index: 10;
   @apply bg-yuika-blue-700;
 }
 
