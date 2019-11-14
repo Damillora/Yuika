@@ -1,4 +1,5 @@
 {{!< default}}
+{{> "site-header"}}
 <div class="h-screen relative">
   {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
     <div class="h-full opacity-50 bg-black">
@@ -8,9 +9,6 @@
     <h1 class="text-white text-6xl">{{statusCode}}</h1>
     <p class="text-white text-xl">{{message}}</p>
     <a class="text-white text-base" href="{{@site.url}}">Go to the front page →</a>
-  </div>
-  <div class="w-screen flex flex-row justify-begin items-center absolute top-0 navbar index-navbar">
-    {{> "site-header"}}
   </div>
 </div>
 
