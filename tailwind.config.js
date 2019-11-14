@@ -23,6 +23,11 @@ module.exports = {
           '800': '#173B6C',
           '900': '#0E254C',
         }
+      },
+      maxHeight: {
+       '16': '4rem',
+       '24': '6rem',
+       '32': '8rem',
       }
     },
     fontFamily: {
