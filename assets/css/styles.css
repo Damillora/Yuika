@@ -136,7 +136,8 @@ footer {
 /* 4. Navbar */
 
 .nav {
-  @apply hidden flex-col w-full pl-0 my-0 absolute bg-yuika-blue-700;
+  @apply hidden flex-col w-full pl-0 my-0 absolute bg-yuika-blue-700 left-0 right-0;
+  top: 100%;
 }
 .nav li {
   @apply flex flex-row justify-start items-center my-0 py-2 text-white text-sm px-2 h-12 px-4;
@@ -145,10 +146,6 @@ footer {
   @apply align-middle w-full table-cell;
   line-height: 2rem;
 }
-#menushow:hover .nav {
-  @apply block w-screen;
-  right: -1rem;
-}
 
 @screen md {
   .nav {
@@ -156,10 +153,6 @@ footer {
   }
   .nav li {
     @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 inline-block h-full;
-  }
-  #menushow:hover .nav {
-    @apply pt-0 right-0;
-    width: initial;
   }
 }
 

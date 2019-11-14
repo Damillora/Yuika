@@ -1,5 +1,5 @@
   <div class="w-full flex flex-row justify-begin items-center fixed index-navbar">
-    <header class="flex flex-row py-2 flex-wrap w-full">
+    <header class="flex flex-row py-2 w-full relative">
       {{#if @site.logo}}
       <div class="w-12 h-12">
         <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" class="w-full h-full object-contain">
@@ -17,7 +17,7 @@
       </div>
       <div id="menushow" class="cursor-pointer relative">
         <img src="{{asset "images/menu.svg"}}" class="h-12 w-12 px-3 py-3 text-white md:hidden" style="filter: invert(1);" alt="menu"/>
-        {{navigation}}
       </div>
+     {{navigation}}
     </header>
   </div>
