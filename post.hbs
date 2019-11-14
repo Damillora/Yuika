@@ -77,7 +77,7 @@
       {{/next_post}}
     </div>
 </div>
-<div class="mx-4 my-4 w-full">
+<div class="mx-auto px-4 my-4 w-full">
             {{#if primary_tag}}
               {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
