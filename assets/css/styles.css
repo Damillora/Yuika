@@ -175,7 +175,7 @@ footer {
   @apply mx-auto;
 }
 .content-full {
-  @apply px-2;
+  @apply px-4;
 }
 @screen sm {
   .content-full {
