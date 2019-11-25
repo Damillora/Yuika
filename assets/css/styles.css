@@ -213,6 +213,9 @@ footer {
 }
 
 /* 5. Post Card */
+.post-background {
+  height: 18rem;
+}
 .post-card .excerpt {
   max-height: 5rem;
 }
