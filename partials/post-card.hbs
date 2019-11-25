@@ -4,18 +4,20 @@
     <div class="h-full bg-black opacity-50 group-hover:opacity-75 transition-opacity">
     </div>
     <div class="absolute bottom-0 px-6 py-2 mt-4 mt-0 w-full">
+    <div class="py-1">
     {{#if primary_tag}}
     {{#primary_tag}}
-    <div class="py-1">
-      <a href="{{url}}"><p class="bg-green-700 w-auto inline-block px-2 py-1 text-white text-sm">{{name}}</p></a>
-    </div>
+        <a href="{{url}}">
+          <span class="primary-tag-header">{{name}}</span>
+        </a>
     {{/primary_tag}}
     {{/if}}
+    </div>
     <div class="mt-0 text-xl text-white group-hover:text-gray-300">
       <a href="{{url}}"><h1 class="font-light">{{title}}</h1></a>
     </div>
-    <div class="block mt-2 mb-4 text-sm text-white max-h-24 overflow-hidden">
-       <p>{{excerpt words="30"}}</p>
+    <div class="mt-0 text-xs text-white group-hover:text-gray-300">
+          <p><span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
     </div>
     <div class="flex flex-row items-center my-2">
       <div class="flex flex-row">
@@ -32,10 +34,13 @@
       <div class="flex-grow flex flex-col text-xs text-white">
         <div>
           <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
-          <p><span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
         </div>
       </div> 
     </div>
+    <div class="block mt-2 mb-4 text-sm text-white excerpt overflow-hidden">
+       <p>{{excerpt words="30"}}</p>
+    </div>
+
    </div>
   </div>
 </article>

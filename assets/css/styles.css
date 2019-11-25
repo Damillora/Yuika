@@ -23,6 +23,9 @@ header {
   height: 50vh;
 }
 
+.no-image {
+  @apply bg-yuika-blue-500
+}
 
 /* 3. Content Styling */
 #post p {
@@ -49,7 +52,21 @@ header {
 #post a {
   @apply text-yuika-blue-700;
 }
-
+#post ul {
+  @apply list-disc;
+}
+#post ol {
+  @apply list-decimal;
+}
+#post code {
+  @apply bg-gray-200 text-yuika-blue-700;
+}
+#post blockquote {
+  @apply border-l-4 border-yuika-blue-700 pl-8;
+}
+#post pre {
+  @apply bg-gray-200 text-yuika-blue-700 px-2 py-2 border border-yuika-blue-500;
+}
 #post .kg-card {
   @apply py-4 flex flex-col items-center object-contain my-4 mx-0;
 }
@@ -95,6 +112,7 @@ header {
 #post .kg-bookmark-card {
   @apply text-black;
 }
+
 #post .kg-bookmark-container {
   @apply flex flex-row justify-between text-black border border-gray-500 bg-white transition-bg;
 }
@@ -140,11 +158,14 @@ footer {
   top: 100%;
 }
 .nav li {
-  @apply flex flex-row justify-start items-center my-0 py-2 text-white text-sm px-2 h-12 px-4;
+  @apply flex flex-row justify-start items-center my-0 py-2 text-white text-sm px-2 h-12 px-4 transition-bg;
 }
 .nav li a {
   @apply align-middle w-full table-cell;
   line-height: 2rem;
+}
+.nav li:hover {
+  @apply bg-yuika-blue-700 transition-bg;
 }
 
 @screen md {
@@ -191,6 +212,20 @@ footer {
   }
 }
 
+/* 5. Post Card */
+.post-card .excerpt {
+  max-height: 3.75rem;
+}
+
+.primary-tag-header {
+  @apply bg-green-700 w-auto inline-block px-2 py-1 text-white text-sm;
+}
+.tag-header {
+  @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm;
+}
+.author-header {
+  @apply bg-red-700 w-auto inline-block px-2 py-1 text-white text-sm;
+}
 @tailwind components;
 
 @tailwind utilities;
