@@ -5,16 +5,17 @@ This is the theme for [blog.nanao.moe](blog.nanao.moe), which runs on Ghost.
 This theme is under heavy development as tweaks are made.
 
 ## Screenshots
+![index-1](https://i.imgur.com/SoN1Ain.png)
 
-![index](https://i.imgur.com/VX5GDDL.png)
+![index-2](https://i.imgur.com/xi9WXXZ.png)
 
-![post-1](https://i.imgur.com/ewJ3d8q.png)
+![post-1](https://i.imgur.com/UR6BoDQ.png)
 
-![post-2](https://i.imgur.com/5qYy5Zb.png)
+![post-2](https://i.imgur.com/E7w0P6b.png)
 
-![tag](https://i.imgur.com/r5mlo9U.png)
+![tag](https://i.imgur.com/9LyJfN2.png)
 
-![author](https://i.imgur.com/SuTXYYZ.png)
+![author](https://i.imgur.com/czw5ucg.png)
 
 ## Credits
 

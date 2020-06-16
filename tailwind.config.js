@@ -1,15 +1,5 @@
 module.exports = {
   theme: {
-    transitionProperty: {
-      'none': 'none',
-      'all': 'all',
-      'color': 'color',
-      'bg': 'background-color',
-      'border': 'border-color',
-      'colors': ['color', 'background-color', 'border-color'],
-      'opacity': 'opacity',
-      'transform': 'transform',
-    },
     extend: {
       colors: {
         'yuika-blue': {
@@ -38,6 +28,5 @@ module.exports = {
   },
   variants: ['responsive', 'group-hover', 'hover', 'active' ],
   plugins: [
-    require('tailwindcss-transitions')(),
   ],
 }

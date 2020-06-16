@@ -55,27 +55,25 @@
   </div>
 </main>
 <div class="my-4 w-full content-full">
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-col md:flex-row justify-between">
       {{#prev_post}}
-      <div class="w-1/3">
-        <a href="{{url}}">
-          <div class="flex flex-col items-end">
-            <p class="text-xl text-blue-700">Previous post</p>
-            <p>{{title}}</p>
-          </div>
-        </a>
-      </div>
+      <a href="{{url}}" class="block w-full md:w-1/3 flex flex-row items-center justify-start md:justify-end hover:text-white hover:bg-yuika-blue-700 transition duration-500 ease-in-out group py-4 px-4">
+        <span class="material-icons mr-4 text-yuika-blue-700 text-2xl group-hover:text-white">arrow_back</span>
+        <div class="flex flex-col items-start md:items-end ">
+          <p class="text-xl text-yuika-blue-700 group-hover:text-white">Previous post</p>
+          <p>{{title}}</p>
+        </div>
+      </a>
       {{/prev_post}}
       <div class="flex flex-grow"></div>
       {{#next_post}}
-      <div class="w-1/3">
-        <a href="{{url}}">
-          <div class="flex flex-col items-begin">
-            <p class="text-xl text-blue-700">Next post</p>
-            <p>{{title}}</p>
-          </div>
-        </a>
-      </div>
+      <a href="{{url}}" class="block w-full md:w-1/3 flex flex-row items-center justify-end md:justify-start hover:text-white hover:bg-yuika-blue-700 transition duration-500 ease-in-out group py-4 px-4">
+        <div class="flex flex-col items-end md:items-start">
+          <p class="text-xl text-yuika-blue-700 group-hover:text-white">Next post</p>
+          <p>{{title}}</p>
+        </div>
+        <span class="material-icons ml-4 text-yuika-blue-700 text-2xl group-hover:text-white">arrow_forward</span>
+      </a>
       {{/next_post}}
     </div>
 </div>
@@ -85,10 +83,10 @@
                 {{#if related_posts}}
                   {{#../primary_tag}}
                     <div class="px-3 w-full">
-                      <p class="text-2xl">More in <a href="{{url}}" class="bg-green-700 w-auto inline px-2 py-1 text-white text-2xl">{{name}}</a> </p>
+                      <p class="text-2xl">More in <a href="{{url}}" class="primary-tag-header text-2xl">{{name}}</a> </p>
                     </div>
                   {{/../primary_tag}}
-                  <div class="flex flex-wrap justify-start w-full">
+                  <div class="grid grid-cols-3 row-gap-4 col-gap-4 my-4">
                   {{#foreach related_posts}}
                     {{> post-card}}
                   {{/foreach}}
