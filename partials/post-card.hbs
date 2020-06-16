@@ -19,8 +19,8 @@
     <div class="mt-0 text-xs text-white group-hover:text-gray-300">
           <p><span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
     </div>
-    <div class="flex flex-row items-center my-2">
-      <div class="flex flex-row">
+    <div class="author-list text-xs text-white">
+      <div class="author-images">
         {{#foreach authors}}
           {{#if profile_image}}
             <div class="h-8 ml-1 mr-3">
@@ -31,7 +31,7 @@
           {{/if}}
         {{/foreach}}
       </div>
-      <div class="flex-grow flex flex-col text-xs text-white">
+      <div class="author-names">
         <div>
           <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
         </div>

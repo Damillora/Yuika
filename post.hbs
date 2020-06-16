@@ -8,37 +8,39 @@
     </div>
   </div>
   <div class="absolute bottom-0 py-6 left-0 right-0">
-   <div class="container mx-auto content-full">
-    {{#if primary_tag}}
-    {{#primary_tag}}
-    <div>
-        <a href="{{url}}"><span class="primary-tag-header">{{name}}</span></a>
-    </div>
-    {{/primary_tag}}
-    {{/if}}
-    <div>
-      <h1 class="text-white font-light text-3xl md:text-4xl">{{title}}</h1>
-    </div>
-    <div class="mb-4">
-      <p><span class="text-white text-sm"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
-    </div>
-    <div class="flex flex-row">
-        {{#foreach authors}}   
-          {{#if profile_image}}
-            <div class="h-8 ml-1 mr-3">
-              <a href="{{url}}">
-                <img class="h-full rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
-              </a>
-            </div>
-          {{else}}
-            <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-          {{/if}}   
-        {{/foreach}}
-        <div class="text-white">
-          <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
+    <div class="container mx-auto content-full">
+      {{#if primary_tag}}
+        {{#primary_tag}}
+        <div>
+          <a href="{{url}}"><span class="primary-tag-header">{{name}}</span></a>
+        </div>
+        {{/primary_tag}}
+      {{/if}}
+      <div>
+        <h1 class="text-white font-light text-3xl md:text-4xl">{{title}}</h1>
+      </div>
+      <div class="mb-4">
+        <p><span class="text-white text-sm"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
+      </div>
+      <div class="author-list text-base text-white">
+        <div class="author-images">
+          {{#foreach authors}}
+            {{#if profile_image}}
+              <div class="h-8 ml-1 mr-3">
+                <a href="{{url}}">
+                  <img class="h-full rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
+                </a>
+              </div>
+            {{/if}}
+          {{/foreach}}
+        </div>
+        <div class="author-names">
+          <div>
+            <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
+          </div>
         </div>
       </div>
-   </div>
+    </div>
   </div>
 </div>
 
