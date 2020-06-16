@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Exo+2:300,400,500&display=swap');
 
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 @tailwind base;
 
 /* 1. Base Styling */
@@ -8,38 +10,38 @@ html {
   @apply font-sans;
 }
 header {
-  @apply py-4 px-4;
+  @apply py-4;
 }
+
 /* 2. Site Header */
 .index-navbar {
   z-index: 10;
-  @apply transition-bg;
+  @apply transition duration-500 ease-in-out;
 }
 .index-navbar header {
-  @apply transition-bg;
+  @apply transition duration-500 ease-in-out;
   background-color: transparent;
 }
 .index-navbar:hover header {
-  @apply bg-yuika-blue-700 transition-bg;
+  @apply bg-yuika-blue-700 transition duration-500 ease-in-out;
 }
 .index-header {
   min-height: 300px;
-  height: 50vh;
+  height: 70vh;
 }
-
-@screen md {
-  .index-header {
-    height: 70vh;
-  }
-}
-
 .no-image {
   @apply bg-yuika-blue-500
 }
 
+.site-head {
+  @apply flex flex-row flex-grow py-2 transition duration-500 ease-in-out pl-4 flex flex-row flex-grow py-2;
+}
+.site-head:hover {
+  @apply bg-yuika-blue-500;
+}
 /* 3. Content Styling */
 #post p {
-  @apply my-3;
+  @apply my-4;
 }
 #post h1 {
   @apply my-4 text-4xl font-light;
@@ -62,6 +64,9 @@ header {
 #post a {
   @apply text-yuika-blue-700;
 }
+#post a:hover {
+  @apply underline;
+}
 #post ul {
   @apply list-disc;
 }
@@ -69,16 +74,16 @@ header {
   @apply list-decimal;
 }
 #post code {
-  @apply bg-gray-200 text-yuika-blue-700;
+  @apply bg-gray-200 text-yuika-blue-700 whitespace-pre-wrap;
 }
 #post blockquote {
-  @apply border-l-4 border-yuika-blue-700 pl-8;
+  @apply border-l-4 border-yuika-blue-700 pl-8 py-2 my-8;
 }
 #post pre {
-  @apply bg-gray-200 text-yuika-blue-700 px-2 py-2 px-2 border border-yuika-blue-500;
+  @apply bg-gray-200 text-yuika-blue-700 px-2 py-2 px-2 border border-yuika-blue-500 my-8;
 }
 #post .kg-card {
-  @apply py-4 flex flex-col items-center object-contain my-4 mx-0;
+  @apply py-4 flex flex-col items-center object-contain my-8 mx-0;
 }
 #post .kg-card .kg-image {
   @apply w-full;
@@ -110,13 +115,30 @@ header {
 }
 
 #post .kg-gallery-container {
-
+  min-width: 100vw;
 }
+@screen md {
+  #post .kg-gallery-container {
+    min-width: 115%;
+  }
+}
+@screen lg {
+  #post .kg-gallery-container {
+    min-width: 125%;
+  }
+}
+@screen xl {
+  #post .kg-gallery-container {
+    min-width: 140%;
+  }
+}
+
 #post .kg-gallery-row {
   @apply flex flex-row;
 }
 #post .kg-gallery-image {
   @apply mx-1;
+  flex: 1 1 0%;
 }
 
 #post .kg-bookmark-card {
@@ -124,19 +146,20 @@ header {
 }
 
 #post .kg-bookmark-container {
-  @apply flex flex-row justify-between text-black border border-gray-500 bg-white transition-bg;
+  @apply flex flex-row justify-between text-black border-l-4 border-yuika-blue-700 bg-white transition duration-500 ease-in-out;
 }
 #post .kg-bookmark-container:hover {
-  @apply bg-gray-400 transition-bg;
+  @apply bg-gray-400 transition duration-500 ease-in-out;
 }
 #post .kg-bookmark-content {
   @apply w-2/3 py-4 px-4;
 }
 #post .kg-bookmark-thumbnail {
-  @apply w-1/3 h-full;
+  min-width: 33.3333%;
+  @apply max-h-full relative;
 }
 #post .kg-bookmark-thumbnail img {
-  @apply w-full h-full object-cover;
+  @apply absolute top-0 left-0 h-full w-full object-cover;
 }
 #post .kg-bookmark-title {
   @apply font-medium text-xl no-underline mb-1;
@@ -163,27 +186,47 @@ footer {
 
 /* 4. Navbar */
 
+.nav-group {
+
+}
+.nav-group #menushow {
+  @apply cursor-pointer relative px-2 py-2 transition duration-500 ease-in-out;
+}
+.nav-group #menushow:hover {
+  @apply bg-yuika-blue-500
+}
 .nav {
-  @apply hidden flex-col w-full pl-0 my-0 absolute bg-yuika-blue-700 left-0 right-0;
+  @apply hidden flex-row w-full pl-0 my-0 absolute bg-yuika-blue-700 left-0 right-0;
   top: 100%;
 }
+.nav-group:hover .nav {
+  @apply block;
+}
 .nav li {
-  @apply flex flex-row justify-start items-center my-0 py-2 text-white text-sm px-2 h-12 px-4 transition-bg;
+  @apply flex flex-row justify-start items-center my-0 text-white text-sm h-12 transition duration-500 ease-in-out;
 }
 .nav li a {
-  @apply align-middle w-full table-cell;
-  line-height: 2rem;
+  @apply align-middle w-full h-full flex items-center justify-start px-4 py-2;
 }
 .nav li:hover {
-  @apply bg-yuika-blue-500 transition-bg;
+  @apply bg-yuika-blue-500 transition duration-500 ease-in-out;
 }
 
 @screen md {
+  .nav-group #menushow {
+    @apply py-0;
+  }
+  .nav-group:hover .nav {
+    @apply flex;
+  }
   .nav {
-    @apply block static w-auto flex-row h-12 bg-transparent;
+    @apply flex static w-auto flex-row bg-transparent h-full;
   }
   .nav li {
-    @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 inline-block h-full;
+    @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 flex h-full;
+  }
+  .nav li a {
+    @apply justify-center;
   }
 }
 
@@ -226,15 +269,14 @@ footer {
 .post-background {
   height: 18rem;
 }
-.post-card .excerpt {
-  max-height: 5.5rem;
+.post-card {
+  @apply h-full;
 }
-
 .primary-tag-header {
-  @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm transition-bg;
+  @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm transition duration-500 ease-in-out;
 }
 .primary-tag-header:hover {
-  @apply bg-blue-900 transition-bg;
+  @apply bg-blue-900 transition duration-500 ease-in-out;
 }
 .tag-header {
   @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm;
@@ -244,10 +286,7 @@ footer {
 }
 
 .author-list {
-  @apply flex flex-row items-center my-2 py-2 transition-bg;
-}
-.author-list:hover {
-  @apply bg-red-700 transition-bg;
+  @apply flex flex-row items-center my-2 py-2;
 }
 .author-images {
   @apply flex flex-row;
@@ -256,6 +295,22 @@ footer {
   @apply flex-grow flex flex-col;
 }
 
+/* 6. Post feed */
+.post-feed {
+  @apply grid grid-cols-1 row-gap-4 col-gap-4 my-8;
+}
+@screen md {
+  .post-feed {
+    @apply grid grid-cols-2;
+  }
+}
+@screen xl {
+  .post-feed {
+    @apply grid grid-cols-3;
+  }
+}
+
+/* 7. Default transitions */
 @tailwind components;
 
 @tailwind utilities;

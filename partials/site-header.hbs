@@ -1,23 +1,25 @@
   <div class="w-full flex flex-row justify-begin items-center fixed index-navbar">
-    <header class="flex flex-row py-2 w-full relative">
-      {{#if @site.logo}}
-      <div class="w-12 h-12">
-        <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" class="w-full h-full object-contain">
-      </div>
-      {{/if}}
-      <div class="flex flex-col pl-4 flex-grow">
-        <div class="">
-         <a href="{{@site.url}}">
-          <h1 class="text-lg text-white">{{@site.title}}</h1>
-         </a>
+    <header class="flex flex-row w-full relative py-0">
+      <div class="site-head">
+        {{#if @site.logo}}
+        <div class="w-12 h-12">
+          <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" class="w-full h-full object-contain">
         </div>
-        <div class="">
-          <p class="text-sm text-white">{{@site.description}}</p>
+        {{/if}}
+        <a href="{{@site.url}}" class="block flex flex-col pl-4 flex-grow">
+          <div class="">
+            <h1 class="text-lg text-white">{{@site.title}}</h1>
+          </div>
+          <div class="">
+            <p class="text-sm text-white">{{@site.description}}</p>
+          </div>
+        </a>
+      </div>
+      <div class="nav-group">
+        <div id="menushow" class="">
+          <span class="h-12 w-12 px-3 py-3 text-white md:hidden material-icons" alt="menu">menu</span>
         </div>
+        {{navigation}}
       </div>
-      <div id="menushow" class="cursor-pointer relative">
-        <img src="{{asset "images/menu.svg"}}" class="h-12 w-12 px-3 py-3 text-white md:hidden" style="filter: invert(1);" alt="menu"/>
-      </div>
-     {{navigation}}
     </header>
   </div>
