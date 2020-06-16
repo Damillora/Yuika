@@ -16,11 +16,21 @@ header {
   @apply transition-bg;
 }
 .index-navbar header {
+  @apply transition-bg;
   background-color: transparent;
+}
+.index-navbar:hover header {
+  @apply bg-yuika-blue-700 transition-bg;
 }
 .index-header {
   min-height: 300px;
   height: 50vh;
+}
+
+@screen md {
+  .index-header {
+    height: 70vh;
+  }
 }
 
 .no-image {
@@ -65,7 +75,7 @@ header {
   @apply border-l-4 border-yuika-blue-700 pl-8;
 }
 #post pre {
-  @apply bg-gray-200 text-yuika-blue-700 px-2 py-2 border border-yuika-blue-500;
+  @apply bg-gray-200 text-yuika-blue-700 px-2 py-2 px-2 border border-yuika-blue-500;
 }
 #post .kg-card {
   @apply py-4 flex flex-col items-center object-contain my-4 mx-0;
@@ -165,7 +175,7 @@ footer {
   line-height: 2rem;
 }
 .nav li:hover {
-  @apply bg-yuika-blue-700 transition-bg;
+  @apply bg-yuika-blue-500 transition-bg;
 }
 
 @screen md {
@@ -182,7 +192,7 @@ footer {
 }
 
 .post-article {
-  @apply pb-32;
+  @apply pb-32 pt-8;
 }
 
 .content {
@@ -221,7 +231,10 @@ footer {
 }
 
 .primary-tag-header {
-  @apply bg-green-700 w-auto inline-block px-2 py-1 text-white text-sm;
+  @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm transition-bg;
+}
+.primary-tag-header:hover {
+  @apply bg-blue-900 transition-bg;
 }
 .tag-header {
   @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm;
@@ -229,6 +242,20 @@ footer {
 .author-header {
   @apply bg-red-700 w-auto inline-block px-2 py-1 text-white text-sm;
 }
+
+.author-list {
+  @apply flex flex-row items-center my-2 py-2 transition-bg;
+}
+.author-list:hover {
+  @apply bg-red-700 transition-bg;
+}
+.author-images {
+  @apply flex flex-row;
+}
+.author-names {
+  @apply flex-grow flex flex-col;
+}
+
 @tailwind components;
 
 @tailwind utilities;
