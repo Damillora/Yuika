@@ -235,7 +235,7 @@ footer {
 }
 
 .post-article {
-  @apply pb-32 pt-8;
+  @apply pb-32 pt-4;
 }
 
 .content {
