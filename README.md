@@ -1,6 +1,6 @@
 # Yuika, nanao.moe's blog theme
 
-This is the theme for [blog.nanao.moe](blog.nanao.moe), which runs on Ghost.
+This is the theme for [blog.nanao.moe](https://blog.nanao.moe), which runs on Ghost.
 
 This theme is under heavy development as tweaks are made.
 
