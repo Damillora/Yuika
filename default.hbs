@@ -8,8 +8,15 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="{{asset "built/styles.css"}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500&display=swap" />
+    <link rel="preload" as="style" href="{{asset "built/styles.css"}}" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500&display=swap" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/styles.css"}}" />
+   
     {{ghost_head}}    
   </head>
   <body class="{{body_class}}">
