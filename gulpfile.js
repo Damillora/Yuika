@@ -7,20 +7,6 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const cleancss = require('gulp-clean-css');
 
-const purgecss = require('@fullhuman/postcss-purgecss')({
-
-  // Specify the paths to all of the template files in your project 
-  content: [
-    './**/*.hbs',
-    './assets/**/*.js',
-    './assets/css/styles.css', // This file defines required styles for the Ghost editor
-    // etc.
-  ],
-
-  // Include any special characters you're using in this regular expression
-  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-})
-
 function serve(done) {
     livereload.listen();
     done();
@@ -38,7 +24,6 @@ function css () {
       // ...
       require('tailwindcss'),
       require('autoprefixer'),
-      ...process.env.NODE_ENV === 'production' ? [purgecss] : []
       // ...
     ]))
     // ...
