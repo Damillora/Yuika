@@ -38,4 +38,7 @@ module.exports = {
   variants: ['responsive', 'group-hover', 'hover', 'active' ],
   plugins: [
   ],
+  future: {
+    purgeLayersByDefault: true
+  },
 }
