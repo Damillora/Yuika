@@ -246,7 +246,7 @@ footer {
   top: 100%;
 }
 .nav li {
-  @apply w-full flex flex-row justify-start items-center my-0 text-white text-lg h-12 transition duration-300 ease-in-out;
+  @apply w-full flex flex-row justify-start items-center my-0 text-white text-base h-12 transition duration-300 ease-in-out;
 }
 .nav li a {
   @apply align-middle w-full h-full flex items-center justify-start px-4 py-2;
