@@ -51,7 +51,7 @@ header {
   @apply flex flex-row transition duration-300 ease-in-out;
 }
 .site-head {
-  @apply flex flex-row flex-grow py-2 transition duration-300 ease-in-out pl-4 h-16;
+  @apply flex flex-row flex-grow py-2 items-center transition duration-300 ease-in-out pl-4 h-16;
 }
 .site-head:hover {
   @apply bg-yuika-blue-500;
