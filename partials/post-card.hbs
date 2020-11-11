@@ -12,13 +12,13 @@
       {{/if}}
       </div>
       <div class="mt-0 text-xl hover:text-yuika-blue-700 transition duration-500 ease-in-out">
-        <a href="{{url}}"><h1 class="text-3xl font-light">{{title}}</h1></a>
+        <a href="{{url}}"><h1 class="text-xl md:text-2xl font-light">{{title}}</h1></a>
       </div>
-      <div class="mt-0 text-sm">
+      <div class="mt-0 text-xs">
             <p><span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
       </div>
       {{#if authors}}
-      <div class="author-list text-sm ">
+      <div class="author-list text-xs ">
         <div class="author-images">
           {{#foreach authors}}
             {{#if profile_image}}
@@ -37,7 +37,7 @@
         </div> 
       </div>
       {{/if}}
-      <div class="block mt-2 mb-4 text-base  excerpt overflow-hidden">
+      <div class="block mt-2 mb-4 text-sm excerpt overflow-hidden">
         <p>{{excerpt words="30"}}</p>
       </div>
     </div>
