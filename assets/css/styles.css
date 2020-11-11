@@ -298,10 +298,11 @@ footer {
 .post-image-box {
   @apply relative;
   width: 100%;
+  overflow: hidden;
 }
 @screen md {
   .post-image-box {
-    width: 35%;
+    width: 35vw;
     min-width: 300px;
     max-width: 450px;
   }
