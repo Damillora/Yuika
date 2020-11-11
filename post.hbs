@@ -8,13 +8,9 @@
   </div>
   <div class="absolute bottom-0 py-4 left-0 right-0">
     <div class="container mx-auto content-full">
-      {{#if primary_tag}}
-        {{#primary_tag}}
-        <div>
-          <a href="{{url}}"><span class="primary-tag-header">{{name}}</span></a>
-        </div>
-        {{/primary_tag}}
-      {{/if}}
+      <div>
+        {{> primary-tag}}
+      </div>
       <div>
         <h1 class="text-white font-light text-3xl md:text-4xl">{{title}}</h1>
       </div>
@@ -81,9 +77,19 @@
               {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
                   {{#../primary_tag}}
-                    <div class="px-3 w-full">
-                      <p class="text-2xl">More in <a href="{{url}}" class="primary-tag-header text-2xl">{{name}}</a> </p>
-                    </div>
+                      <div class="px-3 w-full">
+                        <p class="text-2xl">More in 
+                          {{#if accent_color}}
+                          <a href="{{url}}">
+                           <span class="primary-tag-header text-2xl" style="background-color: {{accent_color}};">{{name}}</span>
+                          </a>
+                          {{else}}
+                          <a href="{{url}}">
+                           <span class="primary-tag-header text-2xl">{{name}}</span>
+                          </a>
+                          {{/if}}
+                        </p>
+                      </div>
                   {{/../primary_tag}}
                   <div class="grid grid-rows-3 grid-cols-1 row-gap-4 my-4">
                   {{#foreach related_posts}}

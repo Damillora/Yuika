@@ -1,17 +1,25 @@
 <div class="post-card">
-  <article class="relative md:flex md:flex-row w-full h-full hover:bg-gray-400 transition duration-500 ease-in-out py-4 px-4">
-    {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
+  <article class="relative md:flex md:flex-row w-full h-full transition duration-500 ease-in-out py-4 px-4">
+    <a href="{{url}}">
+      {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
+    </a>
     <div class="md:pl-4">
       <div class="pt-4 md:pt-0 py-1">
       {{#if primary_tag}}
       {{#primary_tag}}
+          {{#if accent_color}}
+          <a href="{{url}}">
+            <span class="primary-tag-header" style="background-color: {{accent_color}};">{{name}}</span>
+          </a>
+          {{else}}
           <a href="{{url}}">
             <span class="primary-tag-header">{{name}}</span>
           </a>
+          {{/if}}
       {{/primary_tag}}
       {{/if}}
       </div>
-      <div class="mt-0 text-xl hover:text-yuika-blue-700 transition duration-500 ease-in-out">
+      <div class="mt-0 text-yuika-blue-700 hover:underline transition duration-500 ease-in-out">
         <a href="{{url}}"><h1 class="text-xl md:text-2xl font-light">{{title}}</h1></a>
       </div>
       <div class="mt-0 text-xs">
