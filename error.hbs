@@ -1,13 +1,50 @@
-{{!< default}}
-<div class="h-screen relative">
-  {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-    <div class="h-full opacity-50 bg-black">
-    </div>
-  </div>
-  <div class="h-full flex flex-col justify-center items-begin absolute top-0 mx-12">
-    <h1 class="text-white text-6xl">{{statusCode}}</h1>
-    <p class="text-white text-xl">{{message}}</p>
-    <a class="text-white text-base" href="{{@site.url}}">Go to the front page →</a>
-  </div>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <title>{{statusCode}} - {{message}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500&display=swap" />
+    <link rel="preload" as="style" href="{{asset "built/styles.css"}}" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500&display=swap" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/styles.css"}}" />
+   
+  </head>
+  <body>
+    <div class="w-full h-full">
+      <div class="h-screen relative">
+        <div class="h-full no-image"></div>
+          <div class="h-full opacity-50 bg-black">
+          </div>
+        </div>
+        <div class="h-full flex flex-col justify-center items-begin absolute top-0 mx-12">
+          <h1 class="text-white text-6xl">{{statusCode}}</h1>
+          <p class="text-white text-xl">{{message}}</p>
+          <div>
+          {{#if errorDetails}}
+            <ul class="error-stack-list">
+            {{#foreach errorDetails}}
+              <li>
+                <em class="error-stack-function">{{{rule}}}</em>
+                {{#foreach failures}}
+                  <p><span class="error-stack-file">Ref: {{ref}}</span></p>
+                  <p><span class="error-stack-file">Message: {{message}}</span></p>
+                {{/foreach}}
+              </li>
+            {{/foreach}}
+            </ul>
+          {{/if}}
+          </div>
+        </div>
+     </div>
+    </div>
+  </body>
+</html>
