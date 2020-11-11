@@ -335,14 +335,22 @@ footer {
   @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm;
 }
 .tag-accent-color {
-  @apply inline-block rounded-full align-text-bottom h-16 w-16;
+  @apply inline-block rounded-full align-text-bottom h-12 w-12;
 
 }
 .author-header {
   @apply bg-red-700 w-auto inline-block px-2 py-1 text-white text-sm;
 }
 .author-image {
-  @apply inline-block rounded-full align-text-bottom h-16 w-16;
+  @apply inline-block rounded-full align-text-bottom h-12 w-12;
+}
+@screen md {
+  .tag-accent-color {
+    @apply h-16 w-16;
+  }
+  .author-image {
+    @apply h-16 w-16;
+  }
 }
 .author-list {
   @apply flex flex-row items-center my-2 py-2;
