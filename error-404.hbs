@@ -1,0 +1,13 @@
+{{!< default}}
+<div class="h-screen relative">
+  {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="h-full opacity-50 bg-black">
+    </div>
+  </div>
+  <div class="h-full flex flex-col justify-center items-begin absolute top-0 mx-12">
+    <h1 class="text-white text-6xl">{{statusCode}}</h1>
+    <p class="text-white text-xl">{{message}}</p>
+    <a class="text-white text-base" href="{{@site.url}}">Go to the front page →</a>
+  </div>
+</div>
+
