@@ -25,6 +25,7 @@ with a `no-image` class so we can style it accordingly.
                 url({{img_url @site.cover_image size='xl'}}) 2x);
             background-image: image-set(url({{img_url @site.cover_image size='l'}}) 1x,
                 url({{img_url @site.cover_image size='xl'}}) 2x);
+            background-position: right 25% top 20%;
         }
     }
 
@@ -35,10 +36,11 @@ with a `no-image` class so we can style it accordingly.
                 url({{img_url @site.cover_image size='l'}}) 2x);
             background-image: image-set(url({{img_url @site.cover_image size='m'}}) 1x,
                 url({{img_url @site.cover_image size='l'}}) 2x);
+            background-position: right 25% top 20%;
         }
     }
 </style>
-<div class="h-full w-full responsive-site-header-img bg-cover bg-center bg-yuika-blue-500">
+<div class="h-full w-full responsive-site-header-img bg-cover bg-yuika-blue-500">
 
 {{else}}
 
