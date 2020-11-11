@@ -10,18 +10,10 @@ If the template in question has a background image, then we render responsive im
 for it, and apply those styles to the <header> tag. Else, we just output a <header> tag
 with a `no-image` class so we can style it accordingly.
 --}}
-
+<div>
 {{#if feature_image}}
-
-<style type="text/css">
-    .responsive-{{slug}}-img {
-        background-image: url({{img_url feature_image size='m'}});
-    }
-</style>
-<div class="post-background responsive-{{slug}}-img bg-cover bg-center bg-yuika-blue-500">
-
+<img class="post-image" src="{{img_url feature_image size='m'}}">
 {{else}}
-
-<div class="post-background no-image">
-
+<img class="post-image" src="{{img_url @site.cover_image size='m'}}">
 {{/if}}
+</div>

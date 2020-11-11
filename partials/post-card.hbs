@@ -1,47 +1,45 @@
 <div class="post-card">
-<article class="relative w-full h-full hover:bg-gray-400 transition duration-500 ease-in-out py-4 px-4">
-  {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
-    <div class="h-full">
-    </div>
-  </div>
-    <div class="mt-4 py-1">
-    {{#if primary_tag}}
-    {{#primary_tag}}
-        <a href="{{url}}">
-          <span class="primary-tag-header">{{name}}</span>
-        </a>
-    {{/primary_tag}}
-    {{/if}}
-    </div>
-    <div class="mt-0 text-xl hover:text-yuika-blue-700 transition duration-500 ease-in-out">
-      <a href="{{url}}"><h1 class="font-light">{{title}}</h1></a>
-    </div>
-    <div class="mt-0 text-xs">
-          <p><span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
-    </div>
-    {{#if authors}}
-    <div class="author-list text-xs ">
-      <div class="author-images">
-        {{#foreach authors}}
-          {{#if profile_image}}
-            <div class="h-8 ml-1 mr-3">
-              <a href="{{url}}">
-                <img class="h-full rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
-              </a>
-            </div>
-          {{/if}}
-        {{/foreach}}
+  <article class="relative md:flex md:flex-row w-full h-full hover:bg-gray-400 transition duration-500 ease-in-out py-4 px-4">
+    {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="md:pl-4">
+      <div class="pt-4 md:pt-0 py-1">
+      {{#if primary_tag}}
+      {{#primary_tag}}
+          <a href="{{url}}">
+            <span class="primary-tag-header">{{name}}</span>
+          </a>
+      {{/primary_tag}}
+      {{/if}}
       </div>
-      <div class="author-names">
-        <div>
-          <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
+      <div class="mt-0 text-xl hover:text-yuika-blue-700 transition duration-500 ease-in-out">
+        <a href="{{url}}"><h1 class="text-3xl font-light">{{title}}</h1></a>
+      </div>
+      <div class="mt-0 text-sm">
+            <p><span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
+      </div>
+      {{#if authors}}
+      <div class="author-list text-sm ">
+        <div class="author-images">
+          {{#foreach authors}}
+            {{#if profile_image}}
+              <div class="h-8 ml-1 mr-3">
+                <a href="{{url}}">
+                  <img class="h-full rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
+                </a>
+              </div>
+            {{/if}}
+          {{/foreach}}
         </div>
-      </div> 
+        <div class="author-names">
+          <div>
+            <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
+          </div>
+        </div> 
+      </div>
+      {{/if}}
+      <div class="block mt-2 mb-4 text-base  excerpt overflow-hidden">
+        <p>{{excerpt words="30"}}</p>
+      </div>
     </div>
-    {{/if}}
-    <div class="block mt-2 mb-4 text-sm  excerpt overflow-hidden">
-       <p>{{excerpt words="30"}}</p>
-    </div>
-</article>
-
+  </article>
 </div>

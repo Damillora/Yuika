@@ -1,24 +1,30 @@
-  <div class="w-full flex flex-row justify-begin items-center fixed index-navbar">
-    <header class="flex flex-row w-full relative py-0">
-      <div class="site-head">
-        {{#if @site.logo}}
-        <div class="w-12 h-12">
-          <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" class="w-full h-full object-contain">
+  <div class="index-navbar">
+    <div class="site-background">
+      {{> site-background }}
+      </div>
+    </div>
+    <header class="flex flex-col w-full relative py-0">
+      <div class="site-title">
+        <div id="menushow" class="py-2">
+          <span class="h-12 w-12 px-2 py-3 text-white material-icons" alt="menu">menu</span>
         </div>
-        {{/if}}
-        <a href="{{@site.url}}" class="block flex flex-col pl-4 flex-grow">
-          <div class="">
-            <h1 class="text-lg text-white">{{@site.title}}</h1>
+        <div class="site-head">
+          {{#if @site.logo}}
+          <div class="w-12 h-12">
+            <img src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" class="w-full h-full object-contain">
           </div>
-          <div class="">
-            <p class="text-sm text-white">{{@site.description}}</p>
-          </div>
-        </a>
+          {{/if}}
+          <a href="{{@site.url}}" class="block flex flex-col pl-4 flex-grow">
+            <div class="">
+              <h1 class="text-lg text-white">{{@site.title}}</h1>
+            </div>
+            <div class="">
+              <p class="text-sm text-white">{{@site.description}}</p>
+            </div>
+          </a>
+        </div>
       </div>
       <div class="nav-group">
-        <div id="menushow" class="">
-          <span class="h-12 w-12 px-3 py-3 text-white md:hidden material-icons" alt="menu">menu</span>
-        </div>
         {{navigation}}
       </div>
     </header>

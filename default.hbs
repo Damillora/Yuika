@@ -20,33 +20,11 @@
     {{ghost_head}}    
   </head>
   <body class="{{body_class}}">
-    <div class="w-full min-h-screen">
+    {{> "site-header"}}
+    <div class="main-container">
       {{{body}}}
+      {{> footer}}
     </div>
-    <footer class="md:h-16">
-      <div class="flex flex-col md:flex-row justify-end md:items-center h-full mb-4 md:mb-0">
-        <div class="text-white md:flex-grow text-sm mx py-4">
-          <p><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</p>
-        </div>
-        <div class="flex flex-col md:flex-row text-white text-sm items-end text-right">
-          <div class="px-4 py-4">
-            <a href="{{@site.url}}">Latest Posts</a>
-          </div>
-          <div class="px-4 py-4">
-            {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-          </div>
-          <div class="px-4 py-4">
-            {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-          </div>
-          <div class="px-4 py-4">
-            Powered by <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-          </div>
-          <div class="px-4 py-4">
-            <a href="https://github.com/Damillora/Yuika">Yuika</a> Theme by <a href="https://nanao.moe" target="_blank" rel="noopener">Damillora</a>
-          </div>
-        </div>
-      </div>
-    </footer>
     <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

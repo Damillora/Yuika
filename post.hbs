@@ -1,7 +1,6 @@
 {{!< default}}
 
 {{#post}}
-{{> "site-header"}}
 <div class="relative group index-header">
   {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
     <div class="h-full opacity-50 bg-black">
@@ -86,7 +85,7 @@
                       <p class="text-2xl">More in <a href="{{url}}" class="primary-tag-header text-2xl">{{name}}</a> </p>
                     </div>
                   {{/../primary_tag}}
-                  <div class="grid grid-rows-3 grid-cols-1 md:grid-rows-2 md:grid-cols-2 xl:grid-rows-1 xl:grid-cols-3 row-gap-4 col-gap-4 my-4">
+                  <div class="grid grid-rows-3 grid-cols-1 row-gap-4 my-4">
                   {{#foreach related_posts}}
                     {{> post-card}}
                   {{/foreach}}

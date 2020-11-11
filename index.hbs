@@ -1,11 +1,13 @@
 {{!< default}}
-{{> "site-header"}}
+{{!--
 <div class="relative group index-header">
-  {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+  {{> header-background background=@site.cover_image}}
     <div class="w-full h-full opacity-50 bg-black">
     </div>
   </div>
 </div>
+--}}
+
 <div class="post-feed content w-full px-2">
   {{#foreach posts}}
     {{> "post-card"}}

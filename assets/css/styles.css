@@ -15,15 +15,29 @@ header {
 
 /* 2. Site Header */
 .index-navbar {
+  top: 0;
   z-index: 10;
-  @apply transition duration-500 ease-in-out;
+  width: 100vw;
+  height: 4rem;
+  overflow: hidden;
+  @apply fixed transition-all duration-300 ease-in-out;
+}
+.index-navbar.enabled {
+  height: 100vh;
+}
+@screen md {
+  .index-navbar {
+    width:  4rem;
+    height: 100vh;
+  }
+  .index-navbar.enabled {
+    width: 100vw;
+  }
 }
 .index-navbar header {
-  @apply transition duration-500 ease-in-out;
-  background-color: transparent;
-}
-.index-navbar:hover header {
-  @apply bg-yuika-blue-700 transition duration-500 ease-in-out;
+  z-index: 12;
+  @apply transition duration-300 ease-in-out h-full;
+  background-color: rgba(0,0,0,0.5);
 }
 .index-header {
   min-height: 300px;
@@ -33,11 +47,42 @@ header {
   @apply bg-yuika-blue-500
 }
 
+.site-title {
+  @apply flex flex-row transition duration-300 ease-in-out;
+}
 .site-head {
-  @apply flex flex-row flex-grow py-2 transition duration-500 ease-in-out pl-4 flex flex-row flex-grow py-2;
+  @apply flex flex-row flex-grow py-2 transition duration-300 ease-in-out pl-4 h-16;
 }
 .site-head:hover {
   @apply bg-yuika-blue-500;
+}
+.site-background {
+  position: absolute;
+  top: -23vh;
+  width: 100vw;
+  height: 100vh;
+  @apply transition-all duration-300 ease-in-out;
+}
+.index-navbar.enabled .site-background {
+  top: 0;
+}
+@screen md {
+  .site-background {
+    top:0;
+    right: -25vw;
+  }
+  .index-navbar.enabled .site-background {
+    top: 0;
+    right: 0;
+  }
+}
+.main-container {
+  @apply pt-16 relative;
+}
+@screen md {
+  .main-container {
+    @apply pt-0 ml-16 min-h-screen;
+  }
 }
 /* 3. Content Styling */
 #post p {
@@ -146,10 +191,10 @@ header {
 }
 
 #post .kg-bookmark-container {
-  @apply flex flex-row justify-between text-black border-l-4 border-yuika-blue-700 bg-white transition duration-500 ease-in-out;
+  @apply flex flex-row justify-between text-black border-l-4 border-yuika-blue-700 bg-white transition duration-300 ease-in-out;
 }
 #post .kg-bookmark-container:hover {
-  @apply bg-gray-400 transition duration-500 ease-in-out;
+  @apply bg-gray-400 transition duration-300 ease-in-out;
 }
 #post .kg-bookmark-content {
   @apply w-2/3 py-4 px-4;
@@ -189,49 +234,30 @@ footer {
 .nav-group {
 
 }
-.nav-group #menushow {
-  @apply cursor-pointer relative px-2 py-2 transition duration-500 ease-in-out;
+#menushow {
+  @apply cursor-pointer w-16 h-16 relative px-2 py-2 transition duration-300 ease-in-out text-center whitespace-no-wrap;
 }
-.nav-group #menushow:hover {
+#menushow:hover {
   @apply bg-yuika-blue-500
 }
 .nav {
-  @apply hidden flex-row w-full pl-0 my-0 absolute bg-yuika-blue-700 left-0 right-0;
+  background: transparent;
+  @apply flex-col w-full pl-0 my-0;
   top: 100%;
 }
-.nav-group:hover .nav {
-  @apply block;
-}
 .nav li {
-  @apply flex flex-row justify-start items-center my-0 text-white text-sm h-12 transition duration-500 ease-in-out;
+  @apply w-full flex flex-row justify-start items-center my-0 text-white text-sm h-12 transition duration-300 ease-in-out;
 }
 .nav li a {
   @apply align-middle w-full h-full flex items-center justify-start px-4 py-2;
 }
 .nav li:hover {
-  @apply bg-yuika-blue-500 transition duration-500 ease-in-out;
+  @apply bg-yuika-blue-500 transition duration-300 ease-in-out;
 }
-
 @screen md {
-  .nav-group #menushow {
-    @apply py-0;
-  }
-  .nav-group:hover .nav {
-    @apply flex;
-  }
   .nav {
-    @apply flex static w-auto flex-row bg-transparent h-full;
+    @apply pl-16;
   }
-  .nav li {
-    @apply object-contain justify-center items-center border-b-0 border-t-0 my-0 flex h-full;
-  }
-  .nav li a {
-    @apply justify-center;
-  }
-}
-
-.nav-fixed {
-  @apply bg-yuika-blue-700;
 }
 
 .post-article {
@@ -266,17 +292,19 @@ footer {
 }
 
 /* 5. Post Card */
-.post-background {
-  height: 18rem;
-}
 .post-card {
-  @apply h-full;
+
+}
+@screen md {
+  .post-image {
+    max-width: 320px;
+  }
 }
 .primary-tag-header {
-  @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm transition duration-500 ease-in-out;
+  @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm transition duration-300 ease-in-out;
 }
 .primary-tag-header:hover {
-  @apply bg-blue-900 transition duration-500 ease-in-out;
+  @apply bg-blue-900 transition duration-300 ease-in-out;
 }
 .tag-header {
   @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm;
@@ -297,17 +325,7 @@ footer {
 
 /* 6. Post feed */
 .post-feed {
-  @apply grid grid-cols-1 row-gap-4 col-gap-4 my-8;
-}
-@screen md {
-  .post-feed {
-    @apply grid grid-cols-2;
-  }
-}
-@screen xl {
-  .post-feed {
-    @apply grid grid-cols-3;
-  }
+  @apply grid grid-cols-1 row-gap-4 my-8;
 }
 
 /* 7. Default transitions */
