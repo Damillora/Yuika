@@ -8,19 +8,27 @@
   </div>
   <div class="absolute bottom-0 py-6 h-full left-0 right-0">
    <div class="container mx-auto content-full h-full flex flex-col justify-end items-begin">
-    <div class="my-2">
-      <span class="tag-header">Tag</span>
-    </div>
     <div>
-      <h1 class="text-white text-2xl md:text-4xl">{{name}}</h1>
+      <span class="text-white text-sm">Tag</span>
     </div>
-    <div class="text-white">
-      {{#if description}}
-      <p>{{description}}</p>
+    <div class="flex flex-row items-center py-2">
+      {{#if accent_color}}
+        <span class="tag-accent-color" style="background-color: {{accent_color}};"></span>
       {{else}}
-      <p>A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</p>
+        <span class="tag-accent-color bg-blue-700"></span>
       {{/if}}
+      <h1 class="text-white text-2xl md:text-4xl ml-4">
+        {{name}}
+      </h1>
     </div>
+    <div class="text-white text-sm">
+      {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+    </div>
+    {{#if description}}
+    <div class="text-white pt-4">
+      <p>{{description}}</p>
+    </div>
+    {{/if}}
    </div>
   </div>
 </div>

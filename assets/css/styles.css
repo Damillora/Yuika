@@ -329,15 +329,21 @@ footer {
   @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm transition duration-300 ease-in-out;
 }
 .primary-tag-header:hover {
-  @apply bg-blue-900 transition duration-300 ease-in-out;
+  @apply transition-all duration-300 ease-in-out underline;
 }
 .tag-header {
   @apply bg-blue-700 w-auto inline-block px-2 py-1 text-white text-sm;
 }
+.tag-accent-color {
+  @apply inline-block rounded-full align-text-bottom h-16 w-16;
+
+}
 .author-header {
   @apply bg-red-700 w-auto inline-block px-2 py-1 text-white text-sm;
 }
-
+.author-image {
+  @apply inline-block rounded-full align-text-bottom h-16 w-16;
+}
 .author-list {
   @apply flex flex-row items-center my-2 py-2;
 }
@@ -346,6 +352,9 @@ footer {
 }
 .author-names {
   @apply flex-grow flex flex-col;
+}
+.author-names a:hover {
+  @apply underline;
 }
 
 /* 6. Post feed */
