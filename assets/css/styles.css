@@ -40,8 +40,14 @@ header {
   background-color: rgba(0,0,0,0.5);
 }
 .index-header {
-  min-height: 300px;
-  height: 70vh;
+  min-height: 200px;
+  height: 50vh;
+}
+@screen md {
+  .index-header {
+    min-height: 300px;
+    height: 70vh;
+  }
 }
 .no-image {
   @apply bg-yuika-blue-500
