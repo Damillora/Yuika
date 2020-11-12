@@ -1,13 +1,10 @@
 module.exports = {
-  purge: {
-    enabled: true,
-    content: [
-      './**/*.hbs',
-      './assets/**/*.js',
-      './assets/css/styles.css', // This file defines required styles for the Ghost editor
+  purge: [
+    './**/*.hbs',
+    './assets/**/*.js',
+    './assets/css/styles.css', // This file defines required styles for the Ghost editor
       // etc.
-    ],
-  },
+  ],
   theme: {
     extend: {
       colors: {
@@ -35,7 +32,7 @@ module.exports = {
       'body': ['"Exo 2"',' -apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
     }
   },
-  variants: ['responsive', 'group-hover', 'hover', 'active' ],
+  variants: ['responsive', 'group-hover', 'hover', 'active','focus' ],
   plugins: [
   ],
   future: {

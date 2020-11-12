@@ -238,7 +238,7 @@ footer {
 /* 4. Navbar */
 
 .nav-group {
-
+  @apply flex flex-col h-full;
 }
 #menushow {
   @apply cursor-pointer w-16 h-16 relative px-2 py-2 transition duration-300 ease-in-out text-center whitespace-no-wrap;
