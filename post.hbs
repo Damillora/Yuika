@@ -78,16 +78,16 @@
                 {{#if related_posts}}
                   {{#../primary_tag}}
                       <div class="px-3 w-full">
-                        <p class="text-2xl">More in 
-                          {{#if accent_color}}
+                        <p class="text-2xl">
+                          More in 
                           <a href="{{url}}">
-                           <span class="primary-tag-header text-2xl" style="background-color: {{accent_color}};">{{name}}</span>
+                            {{#if accent_color}} 
+                            <span class="tag-accent-color medium" style="background-color: {{accent_color}};"></span>
+                            {{else}}
+                            <span class="tag-accent-color medium"></span>{{name}}
+                            {{/if}}
+                            <span class="hover:underline">{{name}}</span>
                           </a>
-                          {{else}}
-                          <a href="{{url}}">
-                           <span class="primary-tag-header text-2xl">{{name}}</span>
-                          </a>
-                          {{/if}}
                         </p>
                       </div>
                   {{/../primary_tag}}
