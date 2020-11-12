@@ -1,14 +1,15 @@
 
 {{#if primary_tag}}
 {{#primary_tag}}
-    {{#if accent_color}}
-    <a href="{{url}}">
-    <span class="primary-tag-header" style="background-color: {{accent_color}};">{{name}}</span>
-    </a>
-    {{else}}
-    <a href="{{url}}">
-    <span class="primary-tag-header">{{name}}</span>
-    </a>
-    {{/if}}
+      <p>
+        <a href="{{url}}">
+          {{#if accent_color}} 
+          <span class="tag-accent-color small" style="background-color: {{accent_color}};"></span>
+          {{else}}
+          <span class="tag-accent-color small"></span>{{name}}
+          {{/if}}
+          <span class="text-base text-white hover:underline">{{name}}</span>
+        </a>
+      </p>
 {{/primary_tag}}
 {{/if}}

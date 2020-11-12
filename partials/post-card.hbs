@@ -4,18 +4,19 @@
       {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
     </a>
     <div class="md:pl-4">
-      <div class="pt-4 md:pt-0 py-1">
+      <div class="pt-4 md:pt-0">
       {{#if primary_tag}}
       {{#primary_tag}}
-          {{#if accent_color}}
-          <a href="{{url}}">
-            <span class="primary-tag-header" style="background-color: {{accent_color}};">{{name}}</span>
-          </a>
+      <p>
+        <a href="{{url}}">
+          {{#if accent_color}} 
+          <span class="tag-accent-color small" style="background-color: {{accent_color}};"></span>
           {{else}}
-          <a href="{{url}}">
-            <span class="primary-tag-header">{{name}}</span>
-          </a>
+          <span class="tag-accent-color small"></span>{{name}}
           {{/if}}
+          <span class="text-sm hover:underline">{{name}}</span>
+        </a>
+      </p>
       {{/primary_tag}}
       {{/if}}
       </div>
