@@ -44,21 +44,6 @@
   <div class="content-full">
     {{content}}
   </div>
-  <div class="content-full">
-    <div class="my-4" id="comments">
-      <div id='discourse-comments'></div>
-
-      <script type="text/javascript">
-        DiscourseEmbed = { discourseUrl: 'https://discourse.nanao.moe/',
-                           discourseEmbedUrl: '{{url absolute="true"}}' };
-        (function() {
-          var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-          d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-        })();
-      </script>
-    </div>
-  </div>
 </main>
 <div class="my-4 w-full content-full">
     <div class="flex flex-col md:flex-row justify-between">
@@ -81,6 +66,21 @@
         <span class="material-icons ml-4 text-yuika-blue-700 text-2xl group-hover:text-white">arrow_forward</span>
       </a>
       {{/next_post}}
+    </div>
+</div>
+<div class="my-4 w-full content-full">
+    <div class="my-4" id="comments">
+      <div id='discourse-comments'></div>
+
+      <script type="text/javascript">
+        DiscourseEmbed = { discourseUrl: 'https://discourse.nanao.moe/',
+                           discourseEmbedUrl: '{{url absolute="true"}}' };
+        (function() {
+          var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+          d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+        })();
+      </script>
     </div>
 </div>
 <div class="mx-auto px-4 my-4 w-full">
