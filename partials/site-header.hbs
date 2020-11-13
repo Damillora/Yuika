@@ -17,57 +17,26 @@
         </div>
       </div>
       <div class="nav-group">
-        {{#if @labs.members}}
         <ul class="nav">
+        {{#if @member}}
           <li>
-            <a id="subscribe-button" href="#">Subscribe</a>
+            <a href="{{@site.url}}/account/">{{@member.email}}</a>
+           </li>
+          <li>
+            <a href="#signout" data-members-signout>Sign out</a>
           </li>
-        </ul>
+        {{else}}
+          <li>
+            <a href="{{@site.url}}/signin/">Sign in</a>
+          </li>
+          <li>
+            <a href="{{@site.url}}/signup/">Subscribe</a>
+          </li>
         {{/if}}
+          <li class="separator"></li>
+        </ul>
         {{navigation}}
       </div>
     </header>
   </div>
 </div>
-
-{{#if @labs.members}}
-{{!-- Subscription dialog --}}
-<div class="fixed left-0 right-0 top-0 bottom-0 z-30 hidden" id="subscribe-dialog">
-  <div class="h-full w-full responsive-site-header-img bg-cover bg-yuika-blue-500">
-    <div class="h-full w-full bg-black opacity-50">
-    </div>
-  </div>
-  <div class="absolute left-0 right-0 top-0 bottom-0 z-40">
-    <div class="h-full w-full py-16 px-4 text-white">
-      <div id="subscribe-form">
-        <h1 class="text-2xl">Subscribe to {{@site.title}}</h1>
-        <p>Get the latest posts delivered straight to your inbox</p>
-        <form data-members-form="subscribe">
-        <div class="py-8">
-          <label class="text-sm">Email address</label>
-          <input type="email" data-members-email class="appearance-none bg-transparent focus:outline-none text-xl border-b w-full px-2 py-1">
-        </div>
-        <button id="subscribe-submit" type="submit" class="px-4 py-2 appearance-none focus:outline-none bg-yuika-blue-700 rounded-none hover:bg-yuika-blue-500 transition duration-300 ease-in-out">
-          Subscribe
-        </button>
-        </form>
-      </div>
-      <div id="subscribe-confirmation">
-        <h1 class="text-2xl">One more step....</h1>
-        <p>Please check your email inbox to confirm your subscription!</p>
-      </div>
-      <div id="subscribe-success">
-        <h1 class="text-2xl">Thank you for subscribing to {{@site.title}}!</h1>
-        <p>The latest posts will be periodically delivered to you when they are published.</p>
-      </div>
-      <div id="subscribe-failure">
-        <h1 class="text-2xl">Invalid subscription link</h1>
-        <p>The link might have expired, or you entered the wrong link. You can try resubscribing.</p>
-      </div>
-    </div>
-  </div>
-  <div class="absolute left-0 top-0 z-50 py-2 pl-2 text-white hover:bg-yuika-blue-700 transition duration-300 ease-in-out flex flex-row items-center justify-center">
-    <a id="subscribe-back" href="#"><span class="h-12 w-12 px-2 py-3 text-white material-icons">arrow_back</span></a>
-  </div>
-</div>
-{{/if}}
