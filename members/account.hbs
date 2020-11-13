@@ -1,0 +1,50 @@
+{{!< ../default}}
+
+
+{{#unless @member}}
+<script>window.location = '{{@site.url}}';</script>
+{{/unless}}
+<div class="relative group index-header">
+  {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="w-full h-full opacity-50 bg-black">
+    </div>
+  </div>
+  <div class="absolute bottom-0 py-4 left-0 right-0">
+    <div class="container mx-auto content-full">
+      <div class="text-white">
+        <div>
+            {{#if @member}}
+            <div class="flex flex-row items-center mb-2">
+                {{#if @member.avatar_image}} 
+                <img class="author-image" src="{{@member.avatar_image}}" alt="{{@member.email}}" />
+                {{/if}}
+            <p class="text-white text-2xl md:text-4xl ml-4">{{@member.email}}</p>
+            </div>
+            {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<article class="post-article">
+<main class="content container" id="post">
+  <div class="content-full">
+    {{#if @member.paid}}
+    {{else if @member}}
+        <h1 class="text-2xl">You are subscribed to updates</h1>
+        <p>You are currently subscribed to updates from <strong>{{@site.title}}</strong>.</p>
+    {{else}}
+    {{/if}}
+  </div>
+</main>
+{{#contentFor "scripts"}}
+<script>
+$(document).ready(function () {
+        // FitVids - start
+        var $postContent = $("#post");
+        $postContent.fitVids();
+        // FitVids - end
+});
+</script>
+{{/contentFor}}

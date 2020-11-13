@@ -1,0 +1,58 @@
+{{!< ../default}}
+
+
+{{#if @member}}
+<script>window.location = '{{@site.url}}';</script>
+{{/if}}
+<div class="relative group index-header large">
+  {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+    <div class="w-full h-full opacity-50 bg-black">
+    </div>
+  </div>
+  <div class="absolute left-0 right-0 top-0 bottom-0 flex flex-row items-center justify-center">
+   <div class="container mx-auto content-full">
+    <div class="text-white">
+      <div>
+        {{#unless @member}}
+        <h1 class="text-2xl">Subscribe to {{@site.title}}</h1>
+        <p>Get the latest posts delivered straight to your inbox</p>
+        <form id="subscribe-form" data-members-form="subscribe">
+          <div class="py-8">
+            <label class="text-sm">Email address</label>
+            <input type="email" data-members-email class="appearance-none bg-transparent focus:outline-none text-xl border-b w-full px-2 py-1">
+          </div>
+          <button id="subscribe-submit" type="submit" class="px-4 py-2 appearance-none focus:outline-none bg-yuika-blue-700 rounded-none hover:bg-yuika-blue-500 transition duration-300 ease-in-out">
+            Subscribe
+          </button>
+          <div class="message-success">
+            <p>Please check your email inbox to confirm your subscription!</p>
+          </div>
+          <div class="message-error">
+            <p>Please enter a valid email address!</p>
+          </div>
+        </form>
+        {{/unless}}
+      </div>
+    </div>
+   </div>
+  </div>
+</div>
+
+<article class="post-article">
+<main class="content container" id="post">
+  <div class="content-full">
+    {{#post}}
+    {{content}}
+    {{/post}}
+  </div>
+</main>
+{{#contentFor "scripts"}}
+<script>
+$(document).ready(function () {
+        // FitVids - start
+        var $postContent = $("#post");
+        $postContent.fitVids();
+        // FitVids - end
+});
+</script>
+{{/contentFor}}

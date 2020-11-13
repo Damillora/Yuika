@@ -41,13 +41,16 @@ header {
 }
 .index-header {
   min-height: 200px;
-  height: 50vh;
+  height: 70vh;
 }
 @screen md {
   .index-header {
     min-height: 300px;
     height: 70vh;
   }
+}
+.index-header.large {
+  height: 90vh;
 }
 .no-image {
   @apply bg-yuika-blue-500
@@ -254,6 +257,10 @@ footer {
 .nav li {
   @apply w-full flex flex-row justify-start items-center my-0 text-white text-base h-12 transition duration-300 ease-in-out;
 }
+.nav li.separator {
+  height: 0;
+  @apply border border-white;
+}
 .nav li a {
   @apply align-middle w-full h-full flex items-center justify-start px-4 py-2;
 }
@@ -370,7 +377,21 @@ footer {
   @apply grid grid-cols-1 row-gap-4 my-8;
 }
 
-/* 7. Default transitions */
+/* 7. Subscribe form */
+#subscribe-form .message-success {
+  @apply hidden;
+}
+#subscribe-form.success .message-success {
+  @apply block;
+}
+#subscribe-form .message-error {
+  @apply hidden;
+}
+#subscribe-form.error .message-error {
+  @apply block;
+}
+
+/* 8. Default transitions */
 @tailwind components;
 
 @tailwind utilities;
