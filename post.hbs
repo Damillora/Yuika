@@ -70,6 +70,10 @@
 </div>
 <div class="my-4 w-full content-full">
     <div class="my-4" id="comments">
+      {{!-- I embedded a Discourse instance for my comments, feel free to replace --}}
+      {{#is "preview"}}
+      <p>Comments are disabled for post previews</p>
+      {{else}}
       <div id='discourse-comments'></div>
 
       <script type="text/javascript">
@@ -81,6 +85,7 @@
           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
         })();
       </script>
+      {{/is}}
     </div>
 </div>
 <div class="mx-auto px-4 my-4 w-full">
