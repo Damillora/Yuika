@@ -1,7 +1,7 @@
 {
     "name": "yuika",
     "description": "nanao.moe's blog theme",
-    "version": "2.5.1",
+    "version": "2.5.2",
     "engines": {
         "ghost-api": "v3"
     },
@@ -28,7 +28,10 @@
                 "width": 1000
             },
             "xl": {
-                "width": 2000
+                "width": 1600
+            }
+            "xxl": {
+                "width": 1920
             }
         }
     },
