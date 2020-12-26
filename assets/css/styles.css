@@ -25,18 +25,14 @@ header {
 .index-navbar.enabled {
   height: 100vh;
 }
-@screen md {
-  .index-navbar {
-    width:  4rem;
-    height: 100vh;
-  }
-  .index-navbar.enabled {
-    width: 100vw;
-  }
-}
 .index-navbar header {
   z-index: 12;
   @apply transition duration-300 ease-in-out h-full;
+}
+.index-navbar.enabled header {
+  background-color: rgba(0,0,0,0.5);
+}
+.index-navbar.detached header {
   background-color: rgba(0,0,0,0.5);
 }
 .index-header {
@@ -67,31 +63,18 @@ header {
 }
 .site-background {
   position: absolute;
+  opacity: 0%;
   top: -23vh;
   width: 100vw;
   height: 100vh;
   @apply transition-all duration-300 ease-in-out;
 }
 .index-navbar.enabled .site-background {
+  opacity: 100%;
   top: 0;
 }
-@screen md {
-  .site-background {
-    top:0;
-    right: -25vw;
-  }
-  .index-navbar.enabled .site-background {
-    top: 0;
-    right: 0;
-  }
-}
 .main-container {
-  @apply pt-16 relative;
-}
-@screen md {
-  .main-container {
-    @apply pt-0 ml-16 min-h-screen;
-  }
+  @apply relative;
 }
 /* 3. Content Styling */
 #post p {
