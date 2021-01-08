@@ -227,7 +227,7 @@ footer {
   @apply flex flex-col h-full;
 }
 #menushow {
-  @apply cursor-pointer w-16 h-16 relative px-2 py-2 transition duration-300 ease-in-out text-center whitespace-no-wrap;
+  @apply cursor-pointer w-16 h-16 relative px-2 py-2 transition duration-300 ease-in-out text-center whitespace-nowrap;
 }
 #menushow:hover {
   @apply bg-yuika-blue-500
@@ -357,7 +357,7 @@ footer {
 
 /* 6. Post feed */
 .post-feed {
-  @apply grid grid-cols-1 row-gap-4 my-8;
+  @apply grid grid-cols-1 gap-y-4 my-8;
 }
 
 /* 7. Subscribe form */
