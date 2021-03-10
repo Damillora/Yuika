@@ -17,24 +17,6 @@
         </div>
       </div>
       <div class="nav-group">
-        <ul class="nav">
-        {{#if @member}}
-          <li>
-            <a href="{{@site.url}}/account/">{{@member.email}}</a>
-           </li>
-          <li>
-            <a href="#signout" data-members-signout>Sign out</a>
-          </li>
-        {{else}}
-          <li>
-            <a href="{{@site.url}}/signin/">Sign in</a>
-          </li>
-          <li>
-            <a href="{{@site.url}}/subscribe/">Subscribe</a>
-          </li>
-        {{/if}}
-          <li class="separator"></li>
-        </ul>
         {{navigation}}
       </div>
     </header>
