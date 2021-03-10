@@ -12,7 +12,9 @@ html {
 header {
   @apply py-4;
 }
-
+a:hover {
+  @apply underline;
+}
 /* 2. Site Header */
 .index-navbar {
   top: 0;
@@ -242,10 +244,13 @@ footer {
 }
 .nav li.separator {
   height: 0;
-  @apply border border-white;
+  @apply border border-white border-t opacity-75;
 }
 .nav li a {
   @apply align-middle w-full h-full flex items-center justify-start px-4 py-2;
+}
+.nav li a:hover {
+  @apply no-underline;
 }
 .nav li:hover {
   @apply bg-yuika-blue-500 transition duration-300 ease-in-out;
