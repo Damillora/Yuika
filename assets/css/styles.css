@@ -12,6 +12,9 @@ html {
 header {
   @apply py-4;
 }
+header a:hover {
+  @apply no-underline;
+}
 a:hover {
   @apply underline;
 }

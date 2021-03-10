@@ -1,15 +1,28 @@
-
 {{#if primary_tag}}
 {{#primary_tag}}
-      <p>
-        <a href="{{url}}">
-          {{#if accent_color}} 
-          <span class="tag-accent-color small" style="background-color: {{accent_color}};"></span>
-          {{else}}
-          <span class="tag-accent-color small"></span>{{name}}
-          {{/if}}
-          <span class="text-base text-white hover:underline">{{name}}</span>
-        </a>
-      </p>
+<div class="pr-2">
+  <a href="{{url}}">
+    {{#if accent_color}}
+    <span class="tag-accent-color small" style="background-color: {{accent_color}};"></span>
+    {{else}}
+    <span class="tag-accent-color small"></span>{{name}}
+    {{/if}}
+    <span class="text-base text-white hover:underline">{{name}}</span>
+  </a>
+</div>
 {{/primary_tag}}
 {{/if}}
+{{#has visibility="paid"}}
+<div class="pr-2">
+  <a href="/subscribe">
+    <span class="text-sm text-red-200 hover:underline">Autonomous Systems only</span>
+  </a>
+</div>
+{{/has}}
+{{#has visibility="members"}}
+<div class="pr-2">
+  <a href="/subscribe">
+    <span class="text-sm text-yuika-blue-200 hover:underline">Subscribers only</span>
+  </a>
+</div>
+{{/has}}

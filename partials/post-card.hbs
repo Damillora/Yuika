@@ -4,21 +4,35 @@
       {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
     </a>
     <div class="md:pl-4">
-      <div class="pt-4 md:pt-0">
+      <div class="pt-4 md:pt-0 flex flex-row">
       {{#if primary_tag}}
       {{#primary_tag}}
-      <p>
+      <div class="pr-2">
         <a href="{{url}}">
           {{#if accent_color}} 
           <span class="tag-accent-color small" style="background-color: {{accent_color}};"></span>
           {{else}}
-          <span class="tag-accent-color small"></span>{{name}}
+          <span class="tag-accent-color small"></span>
           {{/if}}
           <span class="text-sm hover:underline">{{name}}</span>
         </a>
-      </p>
+      </div>
       {{/primary_tag}}
       {{/if}}
+      {{#has visibility="paid"}}
+      <div class="pr-2">
+        <a href="/subscribe">
+          <span class="text-sm text-red-700 hover:underline">Autonomous Systems only</span>
+        </a>
+      </div>
+      {{/has}}
+      {{#has visibility="members"}}
+      <div class="pr-2">
+        <a href="/subscribe">
+          <span class="text-sm text-yuika-blue-700 hover:underline">Subscribers only</span>
+        </a>
+      </div>
+      {{/has}}
       </div>
       <div class="mt-0 text-yuika-blue-700 hover:underline transition duration-500 ease-in-out">
         <a href="{{url}}"><h1 class="text-xl md:text-2xl font-light">{{title}}</h1></a>
