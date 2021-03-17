@@ -12,20 +12,6 @@
           <a href="{{@site.url}}" class="block flex flex-col flex-grow site-title">
             <h1 class="text-lg text-white">{{@site.title}}</h1>
           </a>
-        {{#if @member}}
-          <a href="#/portal/account" class="block flex flex-col text-white px-4">
-            {{@member.email}}
-          </a>          
-        {{else}}
-          {{!--
-          <a href="#/portal/account" class="block flex flex-col text-white px-4">
-            Join The Damillora Network
-          </a>          
-          --}}
-          <a href="#/portal" class="block flex flex-col text-white mr-4">
-            Subscribe
-          </a>
-        {{/if}}
         </div>
       </div>
       <div class="nav-group">
