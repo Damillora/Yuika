@@ -9,38 +9,26 @@
           <span class="h-12 w-12 px-2 py-3 text-white material-icons" alt="menu">menu</span>
         </div>
         <div class="site-head">
-          <a href="{{@site.url}}" class="block flex flex-col flex-grow">
-            <div class="">
-              <h1 class="text-lg text-white">{{@site.title}}</h1>
-            </div>
+          <a href="{{@site.url}}" class="block flex flex-col flex-grow site-title">
+            <h1 class="text-lg text-white">{{@site.title}}</h1>
           </a>
+        {{#if @member}}
+          <a href="#/portal/account" class="block flex flex-col text-white">
+            {{@member.email}}
+          </a>          
+        {{else}}
+          {{!--
+          <a href="#/portal/account" class="block flex flex-col text-white">
+            Join The Damillora Network
+          </a>          
+          --}}
+          <a href="#/portal" class="block flex flex-col text-white">
+            Subscribe
+          </a>
+        {{/if}}
         </div>
       </div>
       <div class="nav-group">
-        <ul class="nav">
-        {{#if @member}}
-          {{#unless @member.paid}}
-          <li>
-            <a href="{{@site.url}}/subscribe/">Join The Damillora Network</a>
-          </li>
-            <li class="separator"></li>
-          {{/unless}}
-          <li>
-            <a href="{{@site.url}}/account/">{{@member.email}}</a>
-           </li>
-          <li>
-            <a href="#signout" data-members-signout>Sign out</a>
-          </li>
-        {{else}}
-          <li>
-            <a href="{{@site.url}}/signin/">Sign in</a>
-          </li>
-          <li>
-            <a href="{{@site.url}}/subscribe/">Subscribe</a>
-          </li>
-        {{/if}}
-          <li class="separator"></li>
-        </ul>
         {{navigation}}
       </div>
     </header>

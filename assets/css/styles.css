@@ -61,9 +61,12 @@ a:hover {
   @apply flex flex-row transition duration-300 ease-in-out;
 }
 .site-head {
-  @apply flex flex-row flex-grow py-2 items-center transition duration-300 ease-in-out pl-4 h-16;
+  @apply flex flex-row flex-grow transition duration-300 ease-in-out;
 }
-.site-head:hover {
+.site-head a {
+  @apply flex flex-row py-2 items-center transition duration-300 ease-in-out px-4 h-16 inline-block;
+}
+.site-head a:hover {
   @apply bg-yuika-blue-500;
 }
 .site-background {
