@@ -1,59 +1,67 @@
 {
-    "name": "yuika",
-    "description": "nanao.moe's blog theme",
-    "version": "3.0.4",
-    "engines": {
-        "ghost-api": "v3"
-    },
-    "license": "MIT",
-    "author": {
-        "email": "developer@damillora.com"
-    },
-    "scripts": {
-        "dev": "gulp dev",
-        "zip": "gulp zip"
-    },
-    "config": {
-        "posts_per_page": 12,
-        "image_sizes": {
-            "xxs": {
-                "width": 30
-            },
-            "xs": {
-                "width": 100
-            },
-            "s": {
-                "width": 300
-            },
-            "m": {
-                "width": 600
-            },
-            "l": {
-                "width": 1000
-            },
-            "xl": {
-                "width": 1600
-            },
-            "xxl": {
-                "width": 1920
-            }
-        }
-    },
-    "keywords": [
-        "ghost-theme",
-        "yuika"
-    ],
-    "dependencies": {
-        "@damillora/shian": "^0.4.0",
-        "autoprefixer": "^10.2.1",
-        "gulp": "^4.0.2",
-        "gulp-clean-css": "^4.2.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-livereload": "^4.0.2",
-        "gulp-postcss": "^9.0.0",
-        "gulp-uglify": "^3.0.2",
-        "gulp-zip": "^5.0.1",
-        "postcss": "^8.2.3",
-        "typeface-exo-2": "^0.0.72"
+  "name": "yuika",
+  "description": "nanao.moe's blog theme",
+  "version": "0.0.0-development",
+  "engines": {
+    "ghost-api": "v3"
+  },
+  "license": "MIT",
+  "author": {
+    "email": "developer@damillora.com"
+  },
+  "scripts": {
+    "dev": "gulp dev",
+    "zip": "gulp zip",
+    "semantic-release": "semantic-release"
+  },
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 1600
+      },
+      "xxl": {
+        "width": 1920
+      }
     }
+  },
+  "keywords": [
+    "ghost-theme",
+    "yuika"
+  ],
+  "dependencies": {
+    "@damillora/shian": "^0.4.0",
+    "autoprefixer": "^10.2.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.1",
+    "postcss": "^8.2.3",
+    "typeface-exo-2": "^0.0.72"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Damillora/Yuika.git"
+  },
+  "devDependencies": {
+    "semantic-release": "^17.4.2"
+  }
 }
