@@ -16,12 +16,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
-      - name: Prepare for deployment
-        if: github.ref == 'refs/heads/nanaomoe'
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release --publish false
+      - if: github.ref == 'refs/heads/nanaomoe'
+        run: yarn zip
       - name: Deploy Ghost Theme
         uses: TryGhost/action-deploy-theme@v1.4.0
         if: github.ref == 'refs/heads/nanaomoe'

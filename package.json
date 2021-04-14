@@ -1,7 +1,7 @@
 {
   "name": "yuika",
   "description": "nanao.moe's blog theme",
-  "version": "3.0.4",
+  "version": "v3.99.0-nanaomoe",
   "engines": {
     "ghost-api": "v3"
   },
