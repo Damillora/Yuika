@@ -19,14 +19,6 @@ function hbs() {
 function css () {
 
   return src('assets/css/styles.css')
-    // ...
-    .pipe(postcss([
-      // ...
-      require('tailwindcss'),
-      require('autoprefixer'),
-      // ...
-    ]))
-    // ...
     .pipe(cleancss({compatibility: 'ie8'}))
     .pipe(dest('assets/built/'))
     .pipe(livereload())
