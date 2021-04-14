@@ -1,7 +1,7 @@
 {
     "name": "yuika",
     "description": "nanao.moe's blog theme",
-    "version": "2.9.2",
+    "version": "3.0.0",
     "engines": {
         "ghost-api": "v3"
     },
@@ -44,7 +44,7 @@
         "yuika"
     ],
     "dependencies": {
-        "@damillora/shian": "^0.1.2",
+        "@damillora/shian": "^0.3.0",
         "autoprefixer": "^10.2.1",
         "gulp": "^4.0.2",
         "gulp-clean-css": "^4.2.0",
@@ -54,10 +54,6 @@
         "gulp-uglify": "^3.0.2",
         "gulp-zip": "^5.0.1",
         "postcss": "^8.2.3",
-        "tailwindcss": "^2.0.2",
         "typeface-exo-2": "^0.0.72"
-    },
-    "devDependencies": {
-        "@fullhuman/postcss-purgecss": "^1.3.0"
     }
 }

@@ -11,11 +11,11 @@ for it, and apply those styles to the <header> tag. Else, we just output a <head
 with a `no-image` class so we can style it accordingly.
 --}}
 <div>
-    <div class="post-image-box">
+    <div class="post-card__image">
         {{#if feature_image}}
-        <img class="post-image" src="{{img_url feature_image size='m'}}">
+        <img src="{{img_url feature_image size='m'}}">
         {{else}}
-        <img class="post-image" src="{{img_url @site.cover_image size='m'}}">
+        <img src="{{img_url @site.cover_image size='m'}}">
         {{/if}}
     </div>
 </div>

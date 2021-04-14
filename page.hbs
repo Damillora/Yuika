@@ -1,36 +1,29 @@
-{{!< default}}
+{{!< default}} {{#post}} <div class="relative group index-header">
 
-{{#post}}
-<div class="relative group index-header">
-  {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-    <div class="w-full h-full opacity-50 bg-black">
+  {{> header-background background=feature_image}}
+  <div class="page-header">
+    <div class="page-header__background responsive-header-img">
+      <div class="page-header__overlay"></div>
+    </div>
+    <div class="page-header__contents">
+      <div class="post-header container mx-auto main">
+        <h1>{{title}}</h1>
+      </div>
     </div>
   </div>
-  <div class="absolute bottom-0 py-6 left-0 right-0">
-   <div class="container mx-auto content-full">
-    <div>
-      <h1 class="text-white font-light text-3xl md:text-4xl">{{title}}</h1>
-    </div>
-   </div>
-  </div>
-</div>
 
-<article class="post-article">
-<main class="content container" id="post">
-  <div class="content-full">
+  <main id="post" class="container mx-auto main">
     {{content}}
-  </div>
-</main>
-{{/post}}
-</article>
+  </main>
 
-{{#contentFor "scripts"}}
-<script>
-$(document).ready(function () {
-        // FitVids - start
-        var $postContent = $("#post");
-        $postContent.fitVids();
-        // FitVids - end
-});
-</script>
-{{/contentFor}}
+  {{/post}}
+  {{#contentFor "scripts"}}
+  <script>
+    $(document).ready(function () {
+      // FitVids - start
+      var $postContent = $("#post");
+      $postContent.fitVids();
+      // FitVids - end
+    });
+  </script>
+  {{/contentFor}}

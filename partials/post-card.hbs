@@ -1,68 +1,64 @@
-<div class="post-card">
-  <article class="relative md:flex md:flex-row w-full h-full transition duration-500 ease-in-out py-4 px-4">
-    <a href="{{url}}">
-      {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
-    </a>
-    <div class="md:pl-4">
-      <div class="pt-4 md:pt-0 flex flex-row">
+<article class="post-card">
+  <a href="{{url}}">
+    {{> post-background}} {{!--Special header-image.hbs partial to generate the background image--}}
+  </a>
+  <div class="post-card__info">
+    <div class="post-card__tag-row">
       {{#if primary_tag}}
       {{#primary_tag}}
-      <div class="pr-2">
-        <a href="{{url}}">
-          {{#if accent_color}} 
-          <span class="tag-accent-color small" style="background-color: {{accent_color}};"></span>
-          {{else}}
-          <span class="tag-accent-color small"></span>
-          {{/if}}
-          <span class="text-sm hover:underline">{{name}}</span>
-        </a>
-      </div>
+      <a href="{{url}}">
+        {{#if accent_color}}
+        <span class="post-card__tag-color" style="background-color: {{accent_color}};"></span>
+        {{else}}
+        <span class="post-card__tag-color"></span>
+        {{/if}}
+        <span class="post-card__tag-name">{{name}}</span>
+      </a>
       {{/primary_tag}}
       {{/if}}
       {{#has visibility="paid"}}
-      <div class="pr-2">
-        <a href="/subscribe">
-          <span class="text-sm text-red-700 hover:underline">Paid content</span>
-        </a>
-      </div>
+      <a href="/subscribe">
+        <span class="post-card__paywall">Paid content</span>
+      </a>
       {{/has}}
       {{#has visibility="members"}}
-      <div class="pr-2">
-        <a href="/subscribe">
-          <span class="text-sm text-yuika-blue-700 hover:underline">Member-exclusive</span>
-        </a>
-      </div>
+      <a href="/subscribe">
+        <span class="post-card__paywall">Member-exclusive</span>
+      </a>
       {{/has}}
-      </div>
-      <div class="mt-0 text-yuika-blue-700 hover:underline transition duration-500 ease-in-out">
-        <a href="{{url}}"><h1 class="text-xl md:text-2xl font-light">{{title}}</h1></a>
-      </div>
-      <div class="mt-0 text-xs">
-            <p><span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span></p>
-      </div>
-      {{#if authors}}
-      <div class="author-list text-xs ">
-        <div class="author-images">
-          {{#foreach authors}}
-            {{#if profile_image}}
-              <div class="h-8 ml-1 mr-3">
-                <a href="{{url}}">
-                  <img class="h-full rounded-full" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
-                </a>
-              </div>
-            {{/if}}
-          {{/foreach}}
+    </div>
+    <a href="{{url}}">
+      <h1 class="post-card__title">{{title}}</h1>
+    </a>
+    <p class="post-card__time">
+      <span>
+        <time datetime="{{date format=" YYYY-MM-DD"}}">
+          {{date format="D MMM YYYY"}}
+        </time>
+        <span class="bull">&bull;</span>
+        {{reading_time}}
+      </span>
+    </p>
+    {{#if authors}}
+    <div class="post-card__author-list">
+      <div class="post-card__author-images">
+        {{#foreach authors}}
+        {{#if profile_image}}
+        <div class="post-card__author-image">
+          <a href="{{url}}">
+            <img src="{{img_url profile_image size=" xs"}}" alt="{{name}}" />
+          </a>
         </div>
-        <div class="author-names">
-          <div>
-            <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
-          </div>
-        </div> 
+        {{/if}}
+        {{/foreach}}
       </div>
-      {{/if}}
-      <div class="block mt-2 mb-4 text-sm excerpt overflow-hidden">
-        <p>{{excerpt words="30"}}</p>
+      <div class="post-card__author-names">
+        <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
       </div>
     </div>
-  </article>
-</div>
+    {{/if}}
+    <div class="post-card__excerpt">
+      <p>{{excerpt words="30"}}</p>
+    </div>
+  </div>
+</article>

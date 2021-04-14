@@ -1,27 +1,33 @@
-{{!< default}}
-{{#author}}
-<div class="relative group index-header">
-  {{> header-background background=cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-    <div class="w-full h-full opacity-50 bg-black">
+{{!< default}} {{#author}} {{> header-background background=cover_image}} <div class="page-header">
+    <div class="page-header__background responsive-header-img">
+      <div class="page-header__overlay"></div>
     </div>
-  </div>
-  <div class="absolute bottom-0 py-6 h-full left-0 right-0">
-   <div class="container mx-auto content-full h-full flex flex-col justify-end items-begin">
-    <div>
-        <span class="text-white text-sm">Author</span>
-    </div>
-    <div class="flex flex-row">
-      <div class="flex flex-col items-begin my-2">
-        <div class="flex flex-row items-center mb-2">
-          {{#if profile_image}} 
-          <img class="author-image" src="{{profile_image}}" alt="{{name}}" />
+    <div class="page-header__contents">
+      <div class="post-header container mx-auto main">
+        <p>
+          <span class="post-header__tag-name">Author</span>
+        </p>
+        <div class="post-header__tag-heading">
+          {{#if profile_image}}
+          <style>
+            .author-image {
+              background-image: url('{{profile_image}}');
+              background-size: cover;
+              background-position: center;
+            }
+          </style>
+          <span class="post-header__tag-heading-color author-image"></span>
+          {{else}}
+          <span class="post-header__tag-heading-color"></span>
           {{/if}}
-          <h1 class="text-white text-2xl md:text-4xl ml-4">{{name}}</h1>
+          <h1>
+            {{name}}
+          </h1>
         </div>
-        <div class="text-white">
+        <p>
           {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
-        </div>
-        <div class="text-white">
+        </p>
+        <p>
           {{#if website}}
           <span class=""><a href="{{website}}" target="_blank" rel="noopener">Website</a></span>
           {{/if}}
@@ -31,21 +37,18 @@
           {{#if facebook}}
           <span class=""><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
           {{/if}}
-         </div>
-       </div>
+        </p>
+        {{#if bio}}
+        <p>{{bio}}</p>
+        {{/if}}
+      </div>
     </div>
-    <div class="text-white">
-      {{#if bio}}
-      <p>{{bio}}</p>
-      {{/if}}
-    </div>
-   </div>
   </div>
-</div>
-{{/author}}
-
-<div class="post-feed content w-full px-2">
-  {{#foreach posts}}
+  {{/author}}
+  <main class="post-list container mx-auto">
+    {{#foreach posts}}
     {{> "post-card"}}
-  {{/foreach}}
-</div>
+    {{/foreach}}
+  </main>
+  {{#contentFor "scripts"}}
+  {{/contentFor}}

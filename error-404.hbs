@@ -1,13 +1,13 @@
-{{!< default}}
-<div class="h-screen relative">
-  {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-    <div class="h-full opacity-50 bg-black">
+{{!< default}} {{> header-background background=@site.cover_image}}
+
+  <div class="page-header">
+    <div class="page-header__background responsive-header-img">
+      <div class="page-header__overlay"></div>
+    </div>
+    <div class="page-header__contents">
+      <div class="container mx-auto main">
+        <h1>{{statusCode}}</h1>
+        <p>{{message}}</p>
+      </div>
     </div>
   </div>
-  <div class="h-full flex flex-col justify-center items-begin absolute top-0 mx-12">
-    <h1 class="text-white text-6xl">{{statusCode}}</h1>
-    <p class="text-white text-xl">{{message}}</p>
-    <a class="text-white text-base" href="{{@site.url}}">Go to the front page →</a>
-  </div>
-</div>
-

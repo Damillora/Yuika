@@ -1,41 +1,34 @@
-{{!< default}}
-
-{{#tag}}
-<div class="relative group index-header">
-  {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-    <div class="w-full h-full opacity-50 bg-black">
+{{!< default}} {{#tag}} {{> header-background background=feature_image}}
+  <div class="page-header">
+    <div class="page-header__background responsive-header-img">
+      <div class="page-header__overlay"></div>
+    </div>
+    <div class="page-header__contents">
+      <div class="post-header container mx-auto main">
+        <p>
+          <span class="post-header__tag-name">Tag</span>
+        </p>
+        <div class="post-header__tag-heading">
+          {{#if accent_color}}
+          <span class="post-header__tag-heading-color" style="background-color: {{accent_color}};"></span>
+          {{else}}
+          <span class="post-header__tag-heading-color"></span>
+          {{/if}}
+          <h1>
+            {{name}}
+          </h1>
+        </div>
+        <p>{{description}}</p>
+      </div>
     </div>
   </div>
-  <div class="absolute bottom-0 py-6 h-full left-0 right-0">
-   <div class="container mx-auto content-full h-full flex flex-col justify-end items-begin">
-    <div>
-      <span class="text-white text-sm">Tag</span>
-    </div>
-    <div class="flex flex-row items-center py-2">
-      {{#if accent_color}}
-        <span class="tag-accent-color" style="background-color: {{accent_color}};"></span>
-      {{else}}
-        <span class="tag-accent-color bg-blue-700"></span>
-      {{/if}}
-      <h1 class="text-white text-2xl md:text-4xl ml-4">
-        {{name}}
-      </h1>
-    </div>
-    <div class="text-white text-sm">
-      {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-    </div>
-    {{#if description}}
-    <div class="text-white pt-4">
-      <p>{{description}}</p>
-    </div>
-    {{/if}}
-   </div>
-  </div>
-</div>
-{{/tag}}
+  {{/tag}}
 
-<div class="post-feed content w-full px-2">
-  {{#foreach posts}}
+  <main class="post-list container mx-auto">
+    {{#foreach posts}}
     {{> "post-card"}}
-  {{/foreach}}
-</div>
+    {{/foreach}}
+  </main>
+
+  {{#contentFor "scripts"}}
+  {{/contentFor}}

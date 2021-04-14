@@ -8,42 +8,40 @@ be a background image using CSS, we end up with a handful of inline styles.
 
 If the template in question has a background image, then we render responsive image styles
 for it, and apply those styles to the <header> tag. Else, we just output a <header> tag
-with a `no-image` class so we can style it accordingly.
---}}
+        with a `no-image` class so we can style it accordingly.
+        --}}
 
-{{#if @site.cover_image}}
+        {{#if @site.cover_image}}
 
-<style type="text/css">
-    .responsive-site-header-img {
-        background-image: url({{img_url @site.cover_image size='xl'}});
-    }
+        <style type="text/css">
+            .responsive-site-header-img {
+                background-image: url({{img_url @site.cover_image size='xl'}});
+                background-size: cover;
+            }
 
-    @media(max-width: 1000px) {
-        .responsive-site-header-img {
-            background-image: url({{img_url @site.cover_image size='l'}});
-            background-image: -webkit-image-set(url({{img_url @site.cover_image size='l'}}) 1x,
-                url({{img_url @site.cover_image size='xl'}}) 2x);
-            background-image: image-set(url({{img_url @site.cover_image size='l'}}) 1x,
-                url({{img_url @site.cover_image size='xl'}}) 2x);
-            background-position: right 25% top 20%;
-        }
-    }
+            @media(max-width: 1000px) {
+                .responsive-site-header-img {
+                    background-image: url({{img_url @site.cover_image size='l'}});
+                    background-image: -webkit-image-set(url({{img_url @site.cover_image size='l'}}) 1x,
+                        url({{img_url @site.cover_image size='xl'}}) 2x);
+                    background-image: image-set(url({{img_url @site.cover_image size='l'}}) 1x,
+                        url({{img_url @site.cover_image size='xl'}}) 2x);
+                    background-position: right 25% top 20%;
+                }
+            }
 
-    @media(max-width: 600px) {
-        .responsive-site-header-img {
-            background-image: url({{img_url @site.cover_image size='m'}});
-            background-image: -webkit-image-set(url({{img_url @site.cover_image size='m'}}) 1x,
-                url({{img_url @site.cover_image size='l'}}) 2x);
-            background-image: image-set(url({{img_url @site.cover_image size='m'}}) 1x,
-                url({{img_url @site.cover_image size='l'}}) 2x);
-            background-position: right 25% top 20%;
-        }
-    }
-</style>
-<div class="h-full w-full responsive-site-header-img bg-cover bg-yuika-blue-500">
+            @media(max-width: 600px) {
+                .responsive-site-header-img {
+                    background-image: url({{img_url @site.cover_image size='m'}});
+                    background-image: -webkit-image-set(url({{img_url @site.cover_image size='m'}}) 1x,
+                        url({{img_url @site.cover_image size='l'}}) 2x);
+                    background-image: image-set(url({{img_url @site.cover_image size='m'}}) 1x,
+                        url({{img_url @site.cover_image size='l'}}) 2x);
+                    background-position: right 25% top 20%;
+                }
+            }
+        </style>
 
-{{else}}
+        {{else}}
 
-<div class="h-full w-full no-image">
-
-{{/if}}
+        {{/if}}
