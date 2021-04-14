@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@damillora/shian@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-0.3.1.tgz#afdd48dba94ba2711956e6b5f331ae5a9d91178d"
-  integrity sha512-D2wEW5O0hQMBU1MndZiFbjXngRnwoYtG/knqlaYFkGztmRc1W3SVQsqhwlLbKyPGnLJgQMzS7i6KQn5FQC8ZBg==
+"@damillora/shian@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-0.4.0.tgz#9d7b3a56cbc3a799f9b3878ff6ea62d7c7c1362a"
+  integrity sha512-OLGCD2455mVjXTrV43dQ3YD+sze23zmDRdXgwZmSJj3Fi4Dhmq8SPU9eKkaOH5TdbmQW72xIMa6CmDwzZXYKBQ==
 
 ansi-colors@^1.0.1:
   version "1.1.0"
