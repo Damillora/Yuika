@@ -1,5 +1,5 @@
 function setDarkMode() {
-    if (!window.localStorage.getItem('theme') && window.document.body.getAttribute("data-theme")){
+    if (window.document.body.getAttribute("data-theme")){
         window.localStorage.setItem('theme', window.document.body.getAttribute("data-theme"));
     }
     if (window.document.body.getAttribute("data-theme") == "dark") {
@@ -10,6 +10,7 @@ function setDarkMode() {
         $("#darkMode p").text("Dark Mode");
     }
 }
+
 if (window.localStorage.getItem('theme')) {
     window.document.body.setAttribute("data-theme", window.localStorage.getItem("theme"));
 }
