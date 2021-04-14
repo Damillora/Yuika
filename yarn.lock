@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@damillora/shian@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-0.1.2.tgz#bd0cfe32ba52601b9845336cf8659c52595abeb1"
+  integrity sha512-dVZ0mTH7csD6OxbFMPrWbcaDV2lI1l3wzCDLz0J/YFEH4m8zF5m/8V1Z7xN1HhwC3z6pVvC+tCC+yQ7iP7HlnA==
+
 "@fullhuman/postcss-purgecss@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-1.3.0.tgz#d632900d818f4fcf4678e7326923fb838c3e03a7"
