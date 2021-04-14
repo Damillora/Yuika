@@ -1,7 +1,7 @@
 {
     "name": "yuika",
     "description": "nanao.moe's blog theme",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "engines": {
         "ghost-api": "v3"
     },
@@ -44,7 +44,7 @@
         "yuika"
     ],
     "dependencies": {
-        "@damillora/shian": "^0.3.0",
+        "@damillora/shian": "^0.3.1",
         "autoprefixer": "^10.2.1",
         "gulp": "^4.0.2",
         "gulp-clean-css": "^4.2.0",
