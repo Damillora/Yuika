@@ -62,6 +62,8 @@
     "url": "https://github.com/Damillora/Yuika.git"
   },
   "devDependencies": {
+    "@semantic-release/exec": "^5.0.0",
     "semantic-release": "^17.4.2"
-  }
+  },
+  "private": true
 }
