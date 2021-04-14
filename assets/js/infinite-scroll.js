@@ -21,7 +21,7 @@
     }
 
     // post feed element
-    var feedElement = document.querySelector('.post-feed');
+    var feedElement = document.querySelector('.post-list');
     if (!feedElement) {
         return;
     }
