@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@damillora/shian@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-1.0.2.tgz#702b4c585f312b8a84f6d1f5b1b569c210f71d65"
-  integrity sha512-Z3gY7tdOIRlZh93/thsmIUkZJ8kkRYm3ivewQGXiMK+gxlm0NLPcbRt67FHtpxGRHJjljH0DgyU8rp8sE8JLyA==
+"@damillora/shian@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-1.1.0.tgz#bc932f3bacbaffd5f088166c4a100f92d90d7ff7"
+  integrity sha512-1hZPDGMeC3FuGecDEBYcNpzUomGBPxRavGYTwuvTnX2iuL45XpXvEzz6JHQObANEuZ8+ivJLJcUPBzrRvwuZuw==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
