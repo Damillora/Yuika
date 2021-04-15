@@ -24,9 +24,9 @@
     js-tokens "^4.0.0"
 
 "@damillora/shian@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-1.1.0.tgz#bc932f3bacbaffd5f088166c4a100f92d90d7ff7"
-  integrity sha512-1hZPDGMeC3FuGecDEBYcNpzUomGBPxRavGYTwuvTnX2iuL45XpXvEzz6JHQObANEuZ8+ivJLJcUPBzrRvwuZuw==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-1.1.1.tgz#00cbab741474ad7ccd477716d4e25ea195fea7d9"
+  integrity sha512-xVTNM47Tl0+gbTJZWutJcTv3G8CIJUFhA2HlJ6Igpw6KazI+D3JKqfbyMpjw3TUoinCEcgPQOHFzaQ7aKZxXkA==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
@@ -1591,9 +1591,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.3.712:
-  version "1.3.715"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.715.tgz#8fd002e79c13d711133565600f40cd80abfe5d55"
-  integrity sha512-VCWxo9RqTYhcCsHtG+l0TEOS6H5QmO1JyVCQB9nv8fllmAzj1VcCYH3qBCXP75/En6FeoepefnogLPE+5W7OiQ==
+  version "1.3.717"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.717.tgz#78d4c857070755fb58ab64bcc173db1d51cbc25f"
+  integrity sha512-OfzVPIqD1MkJ7fX+yTl2nKyOE4FReeVfMCzzxQS+Kp43hZYwHwThlGP+EGIZRXJsxCM7dqo8Y65NOX/HP12iXQ==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -2089,9 +2089,9 @@ get-stream@^5.0.0, get-stream@^5.2.0:
     pump "^3.0.0"
 
 get-stream@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-6.0.0.tgz#3e0012cb6827319da2706e601a1583e8629a6718"
-  integrity sha512-A1B3Bh1UmL0bidM/YX2NsCOTnGJePL9rO/M+Mw3m9f2gUpfokS0hi5Eah0WSUEWZdZhIZtMjkIYS7mDfOqNHbg==
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-6.0.1.tgz#a262d8eef67aced57c2852ad6167526a43cbf7b7"
+  integrity sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==
 
 get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
@@ -3154,9 +3154,9 @@ libnpmteam@^2.0.2:
     npm-registry-fetch "^9.0.0"
 
 libnpmversion@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/libnpmversion/-/libnpmversion-1.1.1.tgz#c295d08bf5f2be3238c2916c50d856151715e569"
-  integrity sha512-Ha4NoUwq/gvQc+2QvuNLbiCJdVylt04N5qDQT7Oq0VqkmBdojrcfy2Dbb+DCfWtWsflm/RwzENBllRUfsUiIqA==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/libnpmversion/-/libnpmversion-1.2.0.tgz#e181eb7ab750003b7fd29a578c31e84bb91a67b9"
+  integrity sha512-0pfmobLZbOvq1cLIONZk8ISvEM1k3JdkNXWhMDZvUeH+ijBNvMVdPu/CPUr1eDFbNINS3b6R/0PbTIZDVz7thg==
   dependencies:
     "@npmcli/git" "^2.0.7"
     "@npmcli/run-script" "^1.8.4"
