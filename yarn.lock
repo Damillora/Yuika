@@ -24,9 +24,9 @@
     js-tokens "^4.0.0"
 
 "@damillora/shian@^1.1.0":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-1.1.4.tgz#805333b00b5e45e038c20dd88e367ce964824559"
-  integrity sha512-j6dqrtn1QdTtXb1YB2G+wsA+nNWSQk5VrMK3MVYgqjRx38KjNMNp2TKXVjKKfjNVt7bIx0/uSoyaAri2jCGtQA==
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-1.1.5.tgz#c39485ff87b0c1df93151ddc9153b9f831b264a6"
+  integrity sha512-vOBmArbi4pQmDOir3JWlbP82nT+KXY4ViauZaaCUuKzgZL+nBrcCY9qG4ZqlwQIwzTLVCtg9cgAZxWGyNWRoGw==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
