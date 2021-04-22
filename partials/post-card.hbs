@@ -51,7 +51,11 @@
         {{/foreach}}
       </div>
       <div class="post-card__author-names">
-        {{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}
+        {{#has author="count:>2"}}Multiple authors{{else}}
+        {{#foreach authors}}
+        <a href="{{url}}" title="{{name}}" class="post-header__author-name">{{name}}</a>
+        {{/foreach}}
+        {{/has}}
       </div>
     </div>
     {{/if}}

@@ -46,7 +46,7 @@
     "yuika"
   ],
   "dependencies": {
-    "@damillora/shian": "^2.0.0",
+    "@damillora/shian": "^2.0.1",
     "autoprefixer": "^10.2.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
