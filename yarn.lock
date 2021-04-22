@@ -830,10 +830,10 @@
     "@babel/helper-validator-identifier" "^7.12.11"
     to-fast-properties "^2.0.0"
 
-"@damillora/shian@^1.1.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-1.2.0.tgz#762db594d0d3fbfdfa56e3a89cdac67aaec1a642"
-  integrity sha512-+5/jcSbVonxdtc4oKGVEtnMm6VLxkv00UnU0+UoB2W4NSG62140QbWdqerrbeOjzeI3WAJAEbI74b6XCbZ1V2A==
+"@damillora/shian@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@damillora/shian/-/shian-2.0.0.tgz#f64d3dedf2a6bbfa06c9477f242bea8375261621"
+  integrity sha512-grK0nfoXmE8PGDuM6E1TbQxzW1sGuen08Ux3GPTMkJOjNKPoNHlTQ+HvmGyJQo9qaf3prNkK1RsoopFsn2FEbQ==
 
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.2"

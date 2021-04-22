@@ -8,17 +8,17 @@
         <p>
           <span class="post-header__tag-name">Tag</span>
         </p>
-        <div class="post-header__tag-heading">
+        <div class="post-header__heading post-header__heading--tag">
           {{#if accent_color}}
-          <span class="post-header__tag-heading-color" style="background-color: {{accent_color}};"></span>
+          <span class="post-header__heading--tag-color" style="background-color: {{accent_color}};"></span>
           {{else}}
-          <span class="post-header__tag-heading-color"></span>
+          <span class="post-header__heading--tag-color"></span>
           {{/if}}
-          <h1>
+          <h1 class="post-header__heading--tag-text">
             {{name}}
           </h1>
         </div>
-        <p>{{description}}</p>
+        <p class="page-header__text">{{description}}</p>
       </div>
     </div>
   </div>

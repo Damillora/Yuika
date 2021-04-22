@@ -8,7 +8,7 @@
     <div class="page-header__contents">
       <div class="post-header container mx-auto main">
         {{> primary-tag}}
-        <h1>{{title}}</h1>
+        <h1 class="page-header__heading">{{title}}</h1>
         <p class="post-header__time">
           <span>
             <time datetime="{{date format=" YYYY-MM-DD"}}">
@@ -23,16 +23,20 @@
           <div class="post-header__author-images">
             {{#foreach authors}}
             {{#if profile_image}}
-            <div class="post-header__author-image">
-              <a href="{{url}}">
-                <img src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-              </a>
-            </div>
+            <a href="{{url}}">
+              <img class="post-header__author-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+            </a>
             {{/if}}
             {{/foreach}}
           </div>
           <div class="post-header__author-names">
-            <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
+            {{#has author="count:>2"}}
+            Multiple authors
+            {{else}}
+            {{#foreach authors}}
+              <a href="{{url}}" title="{{name}}" class="post-header__author-name">{{name}}</a>
+            {{/foreach}}
+            {{/has}}
           </div>
         </div>
         {{/if}}
@@ -50,8 +54,8 @@
       <a href="{{url}}" class="post-navigator__nav post-navigator__nav--previous-post">
         <span class="material-icons post-navigator__icon">arrow_back</span>
         <div class="post-navigator__nav-content post-navigator__nav-content--previous-post">
-          <p class="post-navigator__nav-title">Previous post</p>
-          <p>{{title}}</p>
+          <p class="post-navigator__nav-indicator">Previous post</p>
+          <p class="post-navigator__nav-title">{{title}}</p>
         </div>
       </a>
       {{/prev_post}}
@@ -59,14 +63,16 @@
       {{#next_post}}
       <a href="{{url}}" class="post-navigator__nav post-navigator__nav--next-post">
         <div class="post-navigator__nav-content post-navigator__nav-content--next-post">
-          <p class="post-navigator__nav-title">Next post</p>
-          <p>{{title}}</p>
+          <p class="post-navigator__nav-indicator">Next post</p>
+          <p class="post-navigator__nav-title">{{title}}</p>
         </div>
         <span class="material-icons post-navigator__icon">arrow_forward</span>
       </a>
       {{/next_post}}
     </div>
   </div>
+
+
   <div id="comments" class="container mx-auto main">
     {{#is "preview"}}
     <p>Comments are disabled for post previews</p>
@@ -77,24 +83,22 @@
   </div>
   <div class="container mx-auto">
     {{#if primary_tag}}
-    {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+    {{#get "posts" include="tags" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
     {{#if related_posts}}
-    {{#../primary_tag}}
-    <div class="px-3 w-full">
-      <p class="text-2xl">
+    <div class="post-list">
+      <div>
         More in
+        {{#../primary_tag}}
         <a href="{{url}}">
           {{#if accent_color}}
-          <span class="tag-accent-color medium" style="background-color: {{accent_color}};"></span>
+          <span class="tag__color" style="background-color: {{accent_color}};"></span>
           {{else}}
-          <span class="tag-accent-color medium"></span>{{name}}
+          <span class="tag__color"></span>
           {{/if}}
-          <span class="hover:underline">{{name}}</span>
+          <span class="tag__name">{{name}}</span>
         </a>
-      </p>
-    </div>
-    {{/../primary_tag}}
-    <div class="post-list">
+        {{/../primary_tag}}
+      </div>
       {{#foreach related_posts}}
       {{> post-card}}
       {{/foreach}}
@@ -103,9 +107,8 @@
     {{/get}}
     {{/if}}
   </div>
-
-
   {{/post}}
+
   {{#contentFor "scripts"}}
   <script>
   </script>

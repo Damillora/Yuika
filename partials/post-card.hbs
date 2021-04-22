@@ -6,7 +6,7 @@
     <div class="post-card__tag-row">
       {{#if primary_tag}}
       {{#primary_tag}}
-      <a href="{{url}}">
+      <a class="post-card__tag-info" href="{{url}}">
         {{#if accent_color}}
         <span class="post-card__tag-color" style="background-color: {{accent_color}};"></span>
         {{else}}
@@ -17,12 +17,12 @@
       {{/primary_tag}}
       {{/if}}
       {{#has visibility="paid"}}
-      <a href="/subscribe">
+      <a class="post-card__tag-info" href="/subscribe">
         <span class="post-card__paywall">Paid content</span>
       </a>
       {{/has}}
       {{#has visibility="members"}}
-      <a href="/subscribe">
+      <a class="post-card__tag-info" href="/subscribe">
         <span class="post-card__paywall">Member-exclusive</span>
       </a>
       {{/has}}
@@ -44,16 +44,14 @@
       <div class="post-card__author-images">
         {{#foreach authors}}
         {{#if profile_image}}
-        <div class="post-card__author-image">
-          <a href="{{url}}">
-            <img src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-          </a>
-        </div>
+        <a href="{{url}}">
+          <img class="post-card__author-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+        </a>
         {{/if}}
         {{/foreach}}
       </div>
       <div class="post-card__author-names">
-        <p>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</p>
+        {{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}
       </div>
     </div>
     {{/if}}

@@ -4,10 +4,10 @@
     </div>
     <div class="page-header__contents">
       <div class="post-header container mx-auto main">
-        <p>
+        <p class="page-header__text">
           <span class="post-header__tag-name">Author</span>
         </p>
-        <div class="post-header__tag-heading">
+        <div class="post-header__heading post-header__heading--tag">
           {{#if profile_image}}
           <style>
             .author-image {
@@ -16,30 +16,33 @@
               background-position: center;
             }
           </style>
-          <span class="post-header__tag-heading-color author-image"></span>
+          <span class="post-header__heading--tag-color author-image"></span>
           {{else}}
-          <span class="post-header__tag-heading-color"></span>
+          <span class="post-header__heading--tag-color"></span>
           {{/if}}
-          <h1>
+          <h1 class="post-header__heading--tag-text">
             {{name}}
           </h1>
         </div>
-        <p>
+        <p class="page-header__text">
           {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
         </p>
-        <p>
+        <p class="page-header__text">
           {{#if website}}
-          <span class=""><a href="{{website}}" target="_blank" rel="noopener">Website</a></span>
+          <span class=""><a class="post-header__social" href="{{website}}" target="_blank"
+              rel="noopener">Website</a></span>
           {{/if}}
           {{#if twitter}}
-          <span class=""><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
+          <span class=""><a class="post-header__social" href="{{twitter_url}}" target="_blank"
+              rel="noopener">Twitter</a></span>
           {{/if}}
           {{#if facebook}}
-          <span class=""><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
+          <span class=""><a class="post-header__social" href="{{facebook_url}}" target="_blank"
+              rel="noopener">Facebook</a></span>
           {{/if}}
         </p>
         {{#if bio}}
-        <p>{{bio}}</p>
+        <p class="page-header__text">{{bio}}</p>
         {{/if}}
       </div>
     </div>

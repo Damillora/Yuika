@@ -5,14 +5,12 @@
   <div class="site-header__inner">
     <header class="header">
       <div class="header__top">
-        <div class="header__title">
-          <a href="/">
-            <h1>{{@site.title}}</h1>
-          </a>
-        </div>
+        <a class="header__title" href="/">
+          {{@site.title}}
+        </a>
         <div class="header__nav-button" id="menushow">
           <span class="header__icon material-icons" alt="menu">menu</span>
-          <p>Menu</p>
+          <p class="header__nav-button-text">Menu</p>
         </div>
       </div>
       {{navigation}}
