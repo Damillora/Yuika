@@ -1,16 +1,13 @@
-
-
-
-document.querySelector("#menushow").addEventListener("click", function () {
+function toggleMenu() {
     document.querySelector(".site-header").classList.toggle('enabled');
     document.querySelector(".site-header__background").classList.toggle('site-header__background--enabled');
     document.querySelector(".menu").classList.toggle("enabled");
-});
-document.querySelector(".menu__item").addEventListener("click", function () {
-    document.querySelector(".site-header").classList.toggle('enabled');
-    document.querySelector(".site-header__background").classList.toggle('site-header__background--enabled');
-    document.querySelector(".menu").classList.toggle("enabled");
-})
+}
+
+document.querySelector("#menushow").addEventListener("click", toggleMenu);
+document.querySelectorAll(".menu__item").forEach(menu =>
+    menu.addEventListener("click", toggleMenu)
+);
 
 var nav = document.querySelector('.site-header');
 var feed = document.querySelector('main');
@@ -27,7 +24,7 @@ function onScroll() {
 
 function onResize() {
     lastWindowHeight = window.innerHeight;
-    lastDocumentHeight = $(document).height();
+    lastDocumentHeight = document.height;
     requestTick();
 }
 

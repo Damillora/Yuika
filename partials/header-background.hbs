@@ -16,20 +16,19 @@ for it, and apply those styles to the <header> tag. Else, we just output a <head
         <style type="text/css">
             .responsive-header-img {
                 background-image: url({{img_url background size='xl'}});
+                background-position: center;
                 background-size: cover;
             }
 
             @media(max-width: 1000px) {
                 .responsive-header-img {
                     background-image: url({{img_url background size='l'}});
-                    background-position: center;
                 }
             }
 
             @media(max-width: 600px) {
                 .responsive-header-img {
                     background-image: url({{img_url background size='m'}});
-                    background-position: center;
                 }
             }
         </style>
@@ -39,6 +38,7 @@ for it, and apply those styles to the <header> tag. Else, we just output a <head
         <style type="text/css">
             .responsive-header-img {
                 background-image: url({{img_url @site.cover_image size='xl'}});
+                background-position: center;
                 background-size: cover;
             }
 
