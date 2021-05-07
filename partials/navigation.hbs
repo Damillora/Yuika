@@ -1,14 +1,22 @@
 <div class="menu">
-    {{#foreach navigation}}
-    <div class="menu__item">
-        <a href={{url absolute="true" }}>
-            <p class="menu__text">{{label}}</p>
-        </a>
+    <div id="nav-menu">
+        {{#foreach navigation}}
+        <div class="menu__item menu__nav-item">
+            <a href={{url absolute="true" }}>
+                <p class="menu__text">{{label}}</p>
+            </a>
+        </div>
+        {{/foreach}}
+        <div class="menu__item" id="darkMode">
+            <i class="menu__icon material-icons md-24">brightness_low</i>
+            <p class="menu__text">Dark Mode</p>
+        </div>
     </div>
-    {{/foreach}}
+    <div class="menu__item" id="search">
+        <i class="menu__icon material-icons md-24">search</i>
+        <input type="text" id="search-query" class="menu__search-input"></input>
+    </div>
+    <div id="search-results" class="menu__search-results">
 
-    <div class="menu__item" id="darkMode">
-        <i class="menu__icon material-icons md-24">brightness_low</i>
-        <p class="menu__text">Dark Mode</p>
     </div>
 </div>

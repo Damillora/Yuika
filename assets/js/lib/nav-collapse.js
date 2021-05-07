@@ -5,9 +5,10 @@ function toggleMenu() {
 }
 
 document.querySelector("#menushow").addEventListener("click", toggleMenu);
-document.querySelectorAll(".menu__item").forEach(menu =>
+document.querySelectorAll(".menu__nav-item").forEach(menu =>
     menu.addEventListener("click", toggleMenu)
 );
+document.getElementById("darkMode").addEventListener("click", toggleMenu);
 
 var nav = document.querySelector('.site-header');
 var feed = document.querySelector('main');
