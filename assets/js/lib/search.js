@@ -18,16 +18,14 @@ async function searchPosts(query) {
     document.getElementById("search-results").innerHTML = result;
 }
 
-let searchTimeout;
 
 if (window.yurikoSearchEndpoint != undefined) {
     var el = document.getElementById("search-query");
     el.addEventListener("input", function (e) {
-        if (searchTimeout) window.clearTimeout(searchTimeout);
         var val = el.value;
         if (val !== "") {
             document.getElementById("nav-menu").classList.add("menu__item--hidden")
-            searchTimeout = window.setTimeout(() => searchPosts(val), 2000);
+            searchPosts(val);
         } else {
             document.getElementById("nav-menu").classList.remove("menu__item--hidden")
 
