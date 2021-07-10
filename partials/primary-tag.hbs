@@ -2,12 +2,12 @@
   {{#if primary_tag}}
   {{#primary_tag}}
   <a href="{{url}}">
+    <span class="tag__name--post-header">{{name}}</span>
     {{#if accent_color}}
     <span class="tag__color" style="background-color: {{accent_color}};"></span>
     {{else}}
     <span class="tag__color"></span>
     {{/if}}
-    <span class="tag__name--post-header">{{name}}</span>
   </a>
   {{/primary_tag}}
   {{/if}}

@@ -7,12 +7,12 @@
       {{#if primary_tag}}
       {{#primary_tag}}
       <a class="post-card__tag-info" href="{{url}}">
+        <span class="post-card__tag-name">{{name}}</span>
         {{#if accent_color}}
         <span class="post-card__tag-color" style="background-color: {{accent_color}};"></span>
         {{else}}
         <span class="post-card__tag-color"></span>
         {{/if}}
-        <span class="post-card__tag-name">{{name}}</span>
       </a>
       {{/primary_tag}}
       {{/if}}

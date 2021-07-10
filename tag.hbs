@@ -9,14 +9,14 @@
           <span class="post-header__tag-name">Tag</span>
         </p>
         <div class="post-header__heading post-header__heading--tag">
+          <h1 class="post-header__heading--tag-text">
+            {{name}}
+          </h1>
           {{#if accent_color}}
           <span class="post-header__heading--tag-color" style="background-color: {{accent_color}};"></span>
           {{else}}
           <span class="post-header__heading--tag-color"></span>
           {{/if}}
-          <h1 class="post-header__heading--tag-text">
-            {{name}}
-          </h1>
         </div>
         <p class="page-header__text">{{description}}</p>
       </div>

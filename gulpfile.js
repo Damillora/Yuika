@@ -37,7 +37,7 @@ function js() {
         .pipe(livereload());
 }
 
-const cssWatcher = () => watch('assets/css/**', css);
+const cssWatcher = () => watch(['assets/css/**','node_modules/@damillora/shian/dist/**'], css);
 const jsWatcher = () => watch('assets/js/**.js', js);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const watcher = parallel(cssWatcher, hbsWatcher, jsWatcher);
