@@ -19,7 +19,7 @@ jobs:
       - if: github.ref == 'refs/heads/nanaomoe'
         run: yarn zip
       - name: Deploy Ghost Theme
-        uses: TryGhost/action-deploy-theme@v1.4.0
+        uses: TryGhost/action-deploy-theme@v1.4.1
         if: github.ref == 'refs/heads/nanaomoe'
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
