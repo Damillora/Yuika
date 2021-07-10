@@ -3,7 +3,7 @@
   "description": "nanao.moe's blog theme",
   "version": "v3.99.0-nanaomoe",
   "engines": {
-    "ghost-api": "v3"
+    "ghost-api": "v4"
   },
   "license": "MIT",
   "author": {
