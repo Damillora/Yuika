@@ -1,51 +1,56 @@
-{{!< default}} {{#author}} {{> header-background background=cover_image}} <div class="page-header">
-    <div class="page-header__background responsive-header-img">
-      <div class="page-header__overlay"></div>
+{{!< default}} <div class="page-header page-header--short">
+  <div class="page-header__background responsive-header-img">
+    <div class="page-header__overlay"></div>
+  </div>
+  <div class="page-header__contents">
+  </div>
+  </div>
+  {{#author}}
+  <div class="post-header container mx-auto main">
+    <p class="post-header__text">
+      <span class="post-header__tag-name">Author</span>
+    </p>
+    <div class="post-header__heading post-header__heading--tag">
+      {{#if profile_image}}
+      <style>
+        .author-image {
+          background-image: url('{{profile_image}}');
+          background-size: cover;
+          background-position: center;
+        }
+      </style>
+      <span class="post-header__heading--tag-color author-image"></span>
+      {{else}}
+      <span class="post-header__heading--tag-color"></span>
+      {{/if}}
+      <h1 class="post-header__heading">
+        {{name}}
+      </h1>
     </div>
-    <div class="page-header__contents">
-      <div class="post-header container mx-auto main">
-        <p class="page-header__text">
-          <span class="post-header__tag-name">Author</span>
-        </p>
-        <div class="post-header__heading post-header__heading--tag">
-          {{#if profile_image}}
-          <style>
-            .author-image {
-              background-image: url('{{profile_image}}');
-              background-size: cover;
-              background-position: center;
-            }
-          </style>
-          <span class="post-header__heading--tag-color author-image"></span>
-          {{else}}
-          <span class="post-header__heading--tag-color"></span>
-          {{/if}}
-          <h1 class="post-header__heading--tag-text">
-            {{name}}
-          </h1>
-        </div>
-        <p class="page-header__text">
-          {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
-        </p>
-        <p class="page-header__text">
-          {{#if website}}
-          <span class=""><a class="post-header__social" href="{{website}}" target="_blank"
-              rel="noopener">Website</a></span>
-          {{/if}}
-          {{#if twitter}}
-          <span class=""><a class="post-header__social" href="{{twitter_url}}" target="_blank"
-              rel="noopener">Twitter</a></span>
-          {{/if}}
-          {{#if facebook}}
-          <span class=""><a class="post-header__social" href="{{facebook_url}}" target="_blank"
-              rel="noopener">Facebook</a></span>
-          {{/if}}
-        </p>
-        {{#if bio}}
-        <p class="page-header__text">{{bio}}</p>
-        {{/if}}
-      </div>
-    </div>
+    <p class="post-header__text">
+      {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+    </p>
+    <p class="post-header__text">
+      {{#if website}}
+      <span class=""><a href="{{website}}" target="_blank" rel="noopener">Website</a></span>
+      {{/if}}
+      {{#if twitter}}
+      <span class=""><a href="{{twitter_url}}" target="_blank"
+          rel="noopener">Twitter</a></span>
+      {{/if}}
+      {{#if facebook}}
+      <span class=""><a href="{{facebook_url}}" target="_blank"
+          rel="noopener">Facebook</a></span>
+      {{/if}}
+    </p>
+    {{#if bio}}
+    <p class="page-header__text">{{bio}}</p>
+    {{/if}}
+    {{#if cover_image}}
+    <figure class="post-header__featured-image">
+      <img src="{{cover_image}}" alt="{{name}}" loading="lazy">
+    </figure>
+    {{/if}}
   </div>
   {{/author}}
   <main class="post-list container mx-auto">

@@ -1,26 +1,34 @@
-{{!< default}} {{#tag}} {{> header-background background=feature_image}}
-  <div class="page-header">
-    <div class="page-header__background responsive-header-img">
+{{!< default}} 
+  <div class="page-header page-header--short">
+    <div class="page-header__background">
       <div class="page-header__overlay"></div>
     </div>
     <div class="page-header__contents">
-      <div class="post-header container mx-auto main">
-        <p>
-          <span class="post-header__tag-name">Tag</span>
-        </p>
-        <div class="post-header__heading post-header__heading--tag">
-          <h1 class="post-header__heading--tag-text">
-            {{name}}
-          </h1>
-          {{#if accent_color}}
-          <span class="post-header__heading--tag-color" style="background-color: {{accent_color}};"></span>
-          {{else}}
-          <span class="post-header__heading--tag-color"></span>
-          {{/if}}
-        </div>
-        <p class="page-header__text">{{description}}</p>
-      </div>
     </div>
+  </div>
+{{#tag}}
+  <div class="post-header container mx-auto main">
+    <p>
+      <span class="post-header__tag-name">Tag</span>
+    </p>
+    <div class="post-header__heading post-header__heading--tag">
+      <h1 class="post-header__heading">
+        {{name}}
+      </h1>
+      {{#if accent_color}}
+      <span class="post-header__heading--tag-color" style="background-color: {{accent_color}};"></span>
+      {{else}}
+      <span class="post-header__heading--tag-color"></span>
+      {{/if}}
+    </div>
+    {{#if description}}
+    <p>{{description}}</p>
+    {{/if}}
+    {{#if feature_image}}
+    <figure class="post-header__featured-image">
+      <img src="{{feature_image}}" alt="{{name}}" loading="lazy">
+    </figure>
+    {{/if}}
   </div>
   {{/tag}}
 

@@ -1,22 +1,32 @@
 {{!< default}} {{#post}} <div class="relative group index-header">
 
-  {{> header-background background=feature_image}}
-  <div class="page-header">
-    <div class="page-header__background responsive-header-img">
+  <div class="page-header page-header--short">
+    <div class="page-header__background">
       <div class="page-header__overlay"></div>
     </div>
     <div class="page-header__contents">
-      <div class="post-header container mx-auto main">
-        <h1 class="page-header__heading">{{title}}</h1>
-      </div>
     </div>
   </div>
+
+  <div class="post-header container mx-auto main">
+    <h1 class="post-header__heading">{{title}}</h1>
+    {{#if feature_image}}
+    <figure class="post-header__featured-image">
+      <img src="{{feature_image}}" alt="{{feature_image_alt}}" loading="lazy">
+      {{#if feature_image_caption}}
+
+      <figcaption>{{feature_image_caption}}</figcaption>
+      {{/if}}
+    </figure>
+    {{/if}}
+  </div>
+
 
   <main id="post" class="container mx-auto main">
     {{content}}
   </main>
-
   {{/post}}
+
   {{#contentFor "scripts"}}
   <script>
   </script>
